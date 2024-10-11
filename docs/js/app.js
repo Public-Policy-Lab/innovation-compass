@@ -161,6 +161,15 @@ const quizApp = {
 
 		// Errors
 		this.hooks.errorMessage = document.querySelector("[data-error-message]");
+
+		// Secret keyboard shortcut: Shift + C
+		document.addEventListener("keydown", function (event) {
+			// Detect if Shift and 'C' are pressed together
+			if (event.key === "C" && event.shiftKey) {
+				console.log("Shift + C pressed");
+				quizApp.createCSVDownload();
+			}
+		});
 	},
 
 	startQuiz: function () {
@@ -230,6 +239,57 @@ const quizApp = {
 				console.error("Could not copy: ", err);
 			}
 		);
+	},
+
+	createCSVDownload: function () {
+		let rows = [];
+
+		// Add the header row
+		let headerRow = ["GID"];
+
+		// Add a column for each question to the header row
+		this.quiz.forEach((item, index) => {
+			if (item.weighting) {
+				headerRow.push(item.activity_name);
+			}
+		});
+
+		// Add the header row to the rows array
+		rows.push(headerRow);
+
+		// Add the data row
+		let dataRow = [];
+
+		// Add the GID to the data row
+		dataRow.push(GID);
+
+		// Add the answers to the data row
+		this.quiz.forEach((item, index) => {
+			if (item.weighting) {
+				dataRow.push(item.answer);
+			}
+		});
+
+		// Add the data row to the rows array
+		rows.push(dataRow);
+
+		// Convert the rows array to a CSV string
+		let csvContent = "data:text/csv;charset=utf-8,";
+		rows.forEach(function (rowArray) {
+			let row = rowArray.join(",");
+			csvContent += row + "\r\n";
+		});
+
+		// Encode the CSV string
+		var encodedUri = encodeURI(csvContent);
+
+		// Create a link and click it to download the file
+		var link = document.createElement("a");
+		link.setAttribute("href", encodedUri);
+		link.setAttribute("download", "my_data.csv");
+		document.body.appendChild(link); // Required for FF
+		link.click(); // This will download the data file named "my_data.csv".
+		document.body.removeChild(link);
 	},
 
 	renderFrame: function () {
