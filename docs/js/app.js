@@ -110,6 +110,7 @@ const quizApp = {
 			prevFrame: document.querySelectorAll("[data-prev-frame-button]"),
 			nextBlock: document.querySelector("[data-next-block-button]"),
 			prevBlock: document.querySelector("[data-prev-block-button]"),
+			share: document.querySelector("[data-share-button]"),
 		};
 
 		this.hooks.buttons.start.addEventListener("click", () => {
@@ -134,6 +135,10 @@ const quizApp = {
 		this.hooks.buttons.prevBlock.addEventListener("click", () => {
 			this.prevBlock();
 		});
+		this.hooks.buttons.share.addEventListener("click", () => {
+			this.copyShareUrl();
+		});
+
 		// Content
 		this.hooks.questionHeadline = document.querySelector("[data-question-headline]");
 		this.hooks.questionBlurb = document.querySelector("[data-question-blurb]");
@@ -212,6 +217,19 @@ const quizApp = {
 			this.currentBlock = 0;
 		}
 		this.renderBlock();
+	},
+
+	copyShareUrl: function () {
+		const url = window.location.href;
+		navigator.clipboard.writeText(url).then(
+			function () {
+				console.log("Copied!");
+				alert("Copied to clipboard!");
+			},
+			function (err) {
+				console.error("Could not copy: ", err);
+			}
+		);
 	},
 
 	renderFrame: function () {
@@ -525,6 +543,7 @@ const quizApp = {
 		this.quiz.forEach((item, index) => {
 			if (item.weighting) {
 				item.block_priority = this.blocks[item.building_block].priority;
+				item.title = this.blocks[item.building_block].title;
 				this.activities.push(item);
 			}
 		});
@@ -558,6 +577,7 @@ const quizApp = {
 		previous = {
 			priority: 0,
 		};
+
 		this.activities.forEach((activity, index) => {
 			if (activity.answer != previous.answer) {
 				html = this.buildActivityGroup("all", activity);
@@ -665,7 +685,7 @@ const quizApp = {
 								class="bb-activity-tile-top-grid">
 								<div
 									class="bb-tag-text block-display ${header_class}">
-									${activity.category}
+									${activity.title}
 								</div>
 								<div
 									class="bb-activity-tile-title">
@@ -697,6 +717,7 @@ const quizApp = {
 			var headline = "You indicated that you are <strong>" + preparedness + "</strong> for the following activities";
 			var activity_group_id = activity.preparedness;
 		}
+
 		let html = `
 			<div class="activity-group" activity-group-id="${activity_group_id}">
 				<button data-tooltip class="activity-group__title tooltip">
@@ -705,9 +726,8 @@ const quizApp = {
 						<div class="tooltip__icon"></div>
 						<div class="tooltip__anchor">
 							<article data-tooltip-content class="hidden tooltip__content">
-								<h1>High Recommendation</h1>
-								<p>Your chart results are based on your quiz results and the importance assigned by a cohort of co-creators.</p>
-							</article>
+								<h1>How this is calculated</h1>
+								<p>Your chart results are based on your quiz results and the importance assigned by a cohort of co-creators.</p></article>
 						</div>
 					</div>
 				</button>
