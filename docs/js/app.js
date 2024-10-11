@@ -31,7 +31,6 @@ const quizApp = {
 			this.initFiltersCurated();
 			this.initFiltersAll();
 			toggleApp.init();
-			tooltipApp.init();
 		});
 	},
 
@@ -573,6 +572,9 @@ const quizApp = {
 
 			previous = activity;
 		});
+
+		// Initialize all tooltips
+		tooltipApp.init();
 	},
 
 	prioritySort: function (a, b) {
