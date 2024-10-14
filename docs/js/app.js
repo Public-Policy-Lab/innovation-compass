@@ -31,7 +31,6 @@ const quizApp = {
 			this.initFiltersCurated();
 			this.initFiltersAll();
 			toggleApp.init();
-			tooltipApp.init();
 		});
 	},
 
@@ -111,6 +110,7 @@ const quizApp = {
 			prevFrame: document.querySelectorAll("[data-prev-frame-button]"),
 			nextBlock: document.querySelector("[data-next-block-button]"),
 			prevBlock: document.querySelector("[data-prev-block-button]"),
+			share: document.querySelector("[data-share-button]"),
 		};
 
 		this.hooks.buttons.start.addEventListener("click", () => {
@@ -135,6 +135,10 @@ const quizApp = {
 		this.hooks.buttons.prevBlock.addEventListener("click", () => {
 			this.prevBlock();
 		});
+		this.hooks.buttons.share.addEventListener("click", () => {
+			this.copyShareUrl();
+		});
+
 		// Content
 		this.hooks.questionHeadline = document.querySelector("[data-question-headline]");
 		this.hooks.questionBlurb = document.querySelector("[data-question-blurb]");
@@ -157,6 +161,15 @@ const quizApp = {
 
 		// Errors
 		this.hooks.errorMessage = document.querySelector("[data-error-message]");
+
+		// Secret keyboard shortcut: Shift + C
+		document.addEventListener("keydown", function (event) {
+			// Detect if Shift and 'C' are pressed together
+			if (event.key === "C" && event.shiftKey) {
+				console.log("Shift + C pressed");
+				quizApp.createCSVDownload();
+			}
+		});
 	},
 
 	startQuiz: function () {
@@ -213,6 +226,70 @@ const quizApp = {
 			this.currentBlock = 0;
 		}
 		this.renderBlock();
+	},
+
+	copyShareUrl: function () {
+		const url = window.location.href;
+		navigator.clipboard.writeText(url).then(
+			function () {
+				console.log("Copied!");
+				alert("Copied to clipboard!");
+			},
+			function (err) {
+				console.error("Could not copy: ", err);
+			}
+		);
+	},
+
+	createCSVDownload: function () {
+		let rows = [];
+
+		// Add the header row
+		let headerRow = ["GID"];
+
+		// Add a column for each question to the header row
+		this.quiz.forEach((item, index) => {
+			if (item.weighting) {
+				headerRow.push(item.activity_name);
+			}
+		});
+
+		// Add the header row to the rows array
+		rows.push(headerRow);
+
+		// Add the data row
+		let dataRow = [];
+
+		// Add the GID to the data row
+		dataRow.push(GID);
+
+		// Add the answers to the data row
+		this.quiz.forEach((item, index) => {
+			if (item.weighting) {
+				dataRow.push(item.answer);
+			}
+		});
+
+		// Add the data row to the rows array
+		rows.push(dataRow);
+
+		// Convert the rows array to a CSV string
+		let csvContent = "data:text/csv;charset=utf-8,";
+		rows.forEach(function (rowArray) {
+			let row = rowArray.join(",");
+			csvContent += row + "\r\n";
+		});
+
+		// Encode the CSV string
+		var encodedUri = encodeURI(csvContent);
+
+		// Create a link and click it to download the file
+		var link = document.createElement("a");
+		link.setAttribute("href", encodedUri);
+		link.setAttribute("download", "my_data.csv");
+		document.body.appendChild(link); // Required for FF
+		link.click(); // This will download the data file named "my_data.csv".
+		document.body.removeChild(link);
 	},
 
 	renderFrame: function () {
@@ -526,6 +603,7 @@ const quizApp = {
 		this.quiz.forEach((item, index) => {
 			if (item.weighting) {
 				item.block_priority = this.blocks[item.building_block].priority;
+				item.title = this.blocks[item.building_block].title;
 				this.activities.push(item);
 			}
 		});
@@ -559,6 +637,7 @@ const quizApp = {
 		previous = {
 			priority: 0,
 		};
+
 		this.activities.forEach((activity, index) => {
 			if (activity.answer != previous.answer) {
 				html = this.buildActivityGroup("all", activity);
@@ -573,6 +652,9 @@ const quizApp = {
 
 			previous = activity;
 		});
+
+		// Initialize all tooltips
+		tooltipApp.init();
 	},
 
 	prioritySort: function (a, b) {
@@ -663,7 +745,7 @@ const quizApp = {
 								class="bb-activity-tile-top-grid">
 								<div
 									class="bb-tag-text block-display ${header_class}">
-									${activity.category}
+									${activity.title}
 								</div>
 								<div
 									class="bb-activity-tile-title">
@@ -695,6 +777,7 @@ const quizApp = {
 			var headline = "You indicated that you are <strong>" + preparedness + "</strong> for the following activities";
 			var activity_group_id = activity.preparedness;
 		}
+
 		let html = `
 			<div class="activity-group" activity-group-id="${activity_group_id}">
 				<button data-tooltip class="activity-group__title tooltip">
@@ -703,9 +786,8 @@ const quizApp = {
 						<div class="tooltip__icon"></div>
 						<div class="tooltip__anchor">
 							<article data-tooltip-content class="hidden tooltip__content">
-								<h1>High Recommendation</h1>
-								<p>Your chart results are based on your quiz results and the importance assigned by a cohort of co-creators.</p>
-							</article>
+								<h1>How this is calculated</h1>
+								<p>Your chart results are based on your quiz results and the importance assigned by a cohort of co-creators.</p></article>
 						</div>
 					</div>
 				</button>
