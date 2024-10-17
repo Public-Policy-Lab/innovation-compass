@@ -691,15 +691,15 @@ const quizApp = {
 	},
 
 	getPreparedness: function (answer) {
-		if (answer == 1) {
+		if (answer == 0) {
 			return "unprepared";
-		} else if (answer == 2) {
+		} else if (answer == 1) {
 			return "somewhat_prepared";
-		} else if (answer == 3) {
+		} else if (answer == 2) {
 			return "adequately_prepared";
-		} else if (answer == 4) {
+		} else if (answer == 3) {
 			return "very_prepared";
-		} else if (answer == 5) {
+		} else if (answer == 4) {
 			return "extremely_prepared";
 		} else {
 			return "unknown_prepareness";
