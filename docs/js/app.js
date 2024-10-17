@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 	quizApp.init();
-	// window.addEventListener("beforeunload", (event) => {
-	// 	// Cancel the event as stated by the standard.
-	// 	event.preventDefault();
-	// 	// Chrome requires returnValue to be set.
-	// 	event.returnValue = "";
-	// });
+	window.addEventListener("beforeunload", (event) => {
+		// Cancel the event as stated by the standard.
+		event.preventDefault();
+		// Chrome requires returnValue to be set.
+		event.returnValue = "";
+	});
 });
 
 const quizApp = {
@@ -18,6 +18,7 @@ const quizApp = {
 	blockKeys: [],
 	activities: [],
 	baseUrl: "https://public-policy-lab.github.io/innovation-compass/",
+	currentDateTime: null,
 	gid: null,
 
 	init: function () {
@@ -171,7 +172,6 @@ const quizApp = {
 		document.addEventListener("keydown", function (event) {
 			// Detect if Shift and 'C' are pressed together
 			if (event.key === "C" && event.shiftKey) {
-				console.log("Shift + C pressed");
 				quizApp.createCSVDownload();
 			}
 		});
@@ -264,6 +264,9 @@ const quizApp = {
 		// Add the header row
 		let headerRow = ["GID"];
 
+		// Add datetime to the header row
+		headerRow.push("datetime");
+
 		// Add a column for each question to the header row
 		this.quiz.forEach((item, index) => {
 			if (item.weighting) {
@@ -279,6 +282,9 @@ const quizApp = {
 
 		// Add the GID to the data row
 		dataRow.push(this.gid);
+
+		// Add the datetime to the data row
+		dataRow.push(this.currentDateTime);
 
 		// Add the answers to the data row
 		this.quiz.forEach((item, index) => {
@@ -566,7 +572,7 @@ const quizApp = {
 
 	finishQuiz: function () {
 		this.doCalculations();
-		this.buildToken();
+		this.buildShareableURL();
 	},
 
 	doCalculations: function () {
@@ -931,7 +937,9 @@ const quizApp = {
 		});
 	},
 
-	buildToken: function () {
+	buildShareableURL: function () {
+		this.currentDateTime = this.getUrlFriendlyDate();
+
 		let token = "";
 
 		this.quiz.forEach((item, index) => {
@@ -945,8 +953,28 @@ const quizApp = {
 
 		searchParams = new URLSearchParams();
 		searchParams.set("r", token);
+		searchParams.set("datetime", this.currentDateTime);
 		searchParams.set("gid", this.gid);
 		window.location = "#" + searchParams.toString();
+	},
+
+	getUrlFriendlyDate: function () {
+		const now = new Date();
+
+		// Format date
+		const year = now.getFullYear();
+		const month = String(now.getMonth() + 1).padStart(2, "0"); // Months are zero-indexed
+		const day = String(now.getDate()).padStart(2, "0");
+
+		// Format time
+		const hours24 = String(now.getHours()).padStart(2, "0");
+		let hours = hours24 % 12;
+		hours = hours ? hours : 12; // the hour '0' should be '12'
+		const minutes = String(now.getMinutes()).padStart(2, "0");
+		const seconds = String(now.getSeconds()).padStart(2, "0");
+		const ampm = hours24 >= 12 ? "pm" : "am";
+
+		return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}-${ampm}`;
 	},
 };
 
