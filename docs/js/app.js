@@ -117,7 +117,7 @@ const quizApp = {
 			this.startQuiz();
 		});
 		this.hooks.buttons.finish.addEventListener("click", () => {
-			this.finishQuiz();
+			this.skipToResults();
 		});
 		this.hooks.buttons.nextFrame.forEach((item) => {
 			item.addEventListener("click", () => {
@@ -170,6 +170,18 @@ const quizApp = {
 				quizApp.createCSVDownload();
 			}
 		});
+	},
+
+	skipToResults: function () {
+		// Dev function
+		// Loop through the quiz and randomly
+		// asssign an answer value from 1 - 5
+		this.quiz.forEach((item) => {
+			if (item.weighting) {
+				item.answer = Math.floor(Math.random() * 5);
+			}
+		});
+		this.finishQuiz();
 	},
 
 	startQuiz: function () {
@@ -233,7 +245,7 @@ const quizApp = {
 		navigator.clipboard.writeText(url).then(
 			function () {
 				console.log("Copied!");
-				alert("Copied to clipboard!");
+				alert("URL Copied to clipboard!");
 			},
 			function (err) {
 				console.error("Could not copy: ", err);
@@ -250,7 +262,7 @@ const quizApp = {
 		// Add a column for each question to the header row
 		this.quiz.forEach((item, index) => {
 			if (item.weighting) {
-				headerRow.push(item.activity_name);
+				headerRow.push('"' + item.activity_name + '"');
 			}
 		});
 
@@ -273,6 +285,12 @@ const quizApp = {
 		// Add the data row to the rows array
 		rows.push(dataRow);
 
+		// Loop through all rows matching header with data and displaying them as a pair
+		rows[0].forEach((item, index) => {
+			console.log(item, rows[1][index]);
+		});
+
+
 		// Convert the rows array to a CSV string
 		let csvContent = "data:text/csv;charset=utf-8,";
 		rows.forEach(function (rowArray) {
@@ -286,9 +304,9 @@ const quizApp = {
 		// Create a link and click it to download the file
 		var link = document.createElement("a");
 		link.setAttribute("href", encodedUri);
-		link.setAttribute("download", "my_data.csv");
+		link.setAttribute("download", "user_data.csv");
 		document.body.appendChild(link); // Required for FF
-		link.click(); // This will download the data file named "my_data.csv".
+		link.click(); // This will download the data file named "user_data.csv".
 		document.body.removeChild(link);
 	},
 
@@ -507,7 +525,6 @@ const quizApp = {
 				sections[item.category]++;
 			}
 		});
-		console.log(this.sections);
 		this.sections = sections;
 	},
 
@@ -543,22 +560,7 @@ const quizApp = {
 	},
 
 	finishQuiz: function () {
-		// window.gtag("event", "quiz", {
-		// 	event_category: 'complete',
-		// 	event_label: '{1:3,2:1,3:5}',
-		// 	event_value: "1",
-		// });
-
-		// Loop through the quiz and randomly
-		// asssign an answer value from 1 - 5
-		this.quiz.forEach((item) => {
-			if (item.weighting) {
-				item.answer = Math.floor(Math.random() * 5) + 1;
-			}
-		});
-
 		this.doCalculations();
-
 		this.buildToken();
 	},
 
@@ -596,6 +598,7 @@ const quizApp = {
 
 		// Build activities
 		this.buildActivities();
+
 	},
 
 	buildActivities: function () {
@@ -770,11 +773,13 @@ const quizApp = {
 	buildActivityGroup: function (type, activity) {
 		if (type == "curated") {
 			var headline = "The following activities are a <strong>" + activity.priority_name + "</strong> recommendation for you";
+			var tooltip = "Your chart shows results based on your preparedness level and activity importance, as rated by early-stage innovators and experts.";
 			var activity_group_id = activity.priority_name;
 		} else {
 			// replace underscores with spaces
 			preparedness = activity.preparedness.replace(/_/g, " ");
 			var headline = "You indicated that you are <strong>" + preparedness + "</strong> for the following activities";
+			var tooltip = "The following activities are organized by your preparedness level based on your quiz results.";
 			var activity_group_id = activity.preparedness;
 		}
 
@@ -787,7 +792,8 @@ const quizApp = {
 						<div class="tooltip__anchor">
 							<article data-tooltip-content class="hidden tooltip__content">
 								<h1>How this is calculated</h1>
-								<p>Your chart results are based on your quiz results and the importance assigned by a cohort of co-creators.</p></article>
+								<p>${tooltip}</p>
+							</article>
 						</div>
 					</div>
 				</button>
