@@ -18,6 +18,7 @@ const quizApp = {
 	blockKeys: [],
 	activities: [],
 	baseUrl: "https://public-policy-lab.github.io/innovation-compass/",
+	gid: null,
 
 	init: function () {
 		if (window.location.hostname != "www.innovationcompass.io") {
@@ -31,6 +32,10 @@ const quizApp = {
 			this.initFiltersCurated();
 			this.initFiltersAll();
 			toggleApp.init();
+		});
+
+		gtag("get", "G-H3ZP0XQ757", "client_id", (client_id) => {
+			this.gid = client_id;
 		});
 	},
 
@@ -273,7 +278,7 @@ const quizApp = {
 		let dataRow = [];
 
 		// Add the GID to the data row
-		dataRow.push(GID);
+		dataRow.push(this.gid);
 
 		// Add the answers to the data row
 		this.quiz.forEach((item, index) => {
@@ -940,7 +945,7 @@ const quizApp = {
 
 		searchParams = new URLSearchParams();
 		searchParams.set("r", token);
-		searchParams.set("gid", GID);
+		searchParams.set("gid", this.gid);
 		window.location = "#" + searchParams.toString();
 	},
 };
