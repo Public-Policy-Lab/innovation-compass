@@ -245,7 +245,7 @@ const quizApp = {
 		navigator.clipboard.writeText(url).then(
 			function () {
 				console.log("Copied!");
-				alert("URL Copied to clipboard!");
+				alert("Results link copied to clipboard!");
 			},
 			function (err) {
 				console.error("Could not copy: ", err);
