@@ -192,7 +192,7 @@
 .quiz__card .quiz__card__headline button.info-button:hover ~ .blurb-wrap,
 .quiz__card .quiz__card__headline button.info-button:focus ~ .blurb-wrap {
 	display: block;
-	padding: 16px 32px 16px 16px;
+	padding: 24px 32px 24px 24px;
 }
 
 .quiz__card .quiz__card__headline .blurb-wrap .blurb-close-button {
@@ -203,11 +203,21 @@
 	right: 16px;
 }
 
-.quiz__card .quiz__card__headline .blurb {
+.quiz__card .quiz__card__headline .blurb h3 {
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 14px;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	margin: 0 0 13px 0;
+}
+
+.quiz__card .quiz__card__headline .blurb p {
 	display: block;
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 19.6px;
+	margin: 0;
 }
 
 .quiz__card .quiz__card__headline.quiz__card__headline--titlepage {
