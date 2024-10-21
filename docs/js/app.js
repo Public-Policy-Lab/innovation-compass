@@ -193,6 +193,9 @@ const quizApp = {
 		this.hideElement(this.hooks.templates.start);
 		this.showElement(this.hooks.templates.question);
 		this.renderFrame();
+
+		// Scroll to top
+		window.scrollTo(0, 0);
 	},
 
 	prevFrame: function () {
@@ -200,6 +203,9 @@ const quizApp = {
 			this.currentFrame--;
 			this.renderFrame();
 		}
+
+		// Scroll to top
+		window.scrollTo(0, 0);
 	},
 
 	nextFrame: function () {
@@ -225,6 +231,9 @@ const quizApp = {
 			this.currentFrame++;
 			this.renderFrame();
 		}
+
+		// Scroll to top
+		window.scrollTo(0, 0);
 	},
 
 	prevBlock: function () {
