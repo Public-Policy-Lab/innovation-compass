@@ -312,7 +312,8 @@
 	pointer-events: auto;
 }
 
-.clock-label:hover {
+.clock-label:hover,
+.clock-label.is--focused {
 	text-decoration: underline;
 }
 
@@ -390,7 +391,7 @@
 
 @media screen and (min-width: 1024px) {
 	.clock-container {
-		padding: 40px 0;
+		padding: 52px 0;
 	}
 
 	.clock {
@@ -405,7 +406,7 @@
 
 @media screen and (min-width: 1280px) {
 	.clock {
-		--width: 400px;
+		--width: 452px;
 		--height: var(--width);
 	}
 }

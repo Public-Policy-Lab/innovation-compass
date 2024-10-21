@@ -301,7 +301,6 @@ const quizApp = {
 			console.log(item, rows[1][index]);
 		});
 
-
 		// Convert the rows array to a CSV string
 		let csvContent = "data:text/csv;charset=utf-8,";
 		rows.forEach(function (rowArray) {
@@ -402,11 +401,27 @@ const quizApp = {
 						this.renderBlock();
 					}
 				}
+
+				// Set the relevant hand label to focused
+				this.hooks.hands_labels.forEach((hand_label) => {
+					hand_label.classList.remove("is--focused");
+					const handBlockId = hand_label.getAttribute("data-hand-label-id");
+					if (handBlockId === selectedHandId) {
+						hand_label.classList.add("is--focused");
+					}
+				});
 			});
 		});
 
 		this.hooks.hands_labels.forEach((hand_label) => {
 			hand_label.addEventListener("click", () => {
+				// Set the relevant hand label to focused
+				this.hooks.hands_labels.forEach((hand_label) => {
+					hand_label.classList.remove("is--focused");
+				});
+
+				hand_label.classList.add("is--focused");
+
 				// Get index
 				const index = hand_label.getAttribute("data-hand-index-id");
 				this.currentBlock = index * 1 + 1;
@@ -435,6 +450,9 @@ const quizApp = {
 			this.hooks.hands.forEach((hand) => {
 				hand.classList.remove("is--focused");
 			});
+			this.hooks.hands_labels.forEach((hand_label) => {
+				hand_label.classList.remove("is--focused");
+			});
 		} else {
 			this.hideElement(this.hooks.templates.slide.intro);
 			this.showElement(this.hooks.templates.slide.single);
@@ -450,6 +468,15 @@ const quizApp = {
 				const handBlockId = hand.getAttribute("data-hand-block-id");
 				if (handBlockId === this.blockKeys[actualIndex]) {
 					hand.classList.add("is--focused");
+				}
+			});
+
+			// Set the relevant hand label to focused
+			this.hooks.hands_labels.forEach((hand_label) => {
+				hand_label.classList.remove("is--focused");
+				const handBlockId = hand_label.getAttribute("data-hand-label-id");
+				if (handBlockId === this.blockKeys[actualIndex]) {
+					hand_label.classList.add("is--focused");
 				}
 			});
 
@@ -609,7 +636,6 @@ const quizApp = {
 
 		// Build activities
 		this.buildActivities();
-
 	},
 
 	buildActivities: function () {
