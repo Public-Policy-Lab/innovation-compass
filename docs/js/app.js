@@ -225,6 +225,9 @@ const quizApp = {
 				this.currentFrame++;
 				this.renderFrame();
 			} else {
+				document.querySelectorAll("[data-answer]").forEach((answer) => {
+					answer.classList.add("has--error");
+				});
 				this.hooks.errorMessage.classList.remove("hidden");
 			}
 		} else {
@@ -330,6 +333,10 @@ const quizApp = {
 	},
 
 	renderFrame: function () {
+		// Remove error classes
+		document.querySelectorAll("[data-answer]").forEach((answer) => {
+			answer.classList.remove("has--error");
+		});
 		// Hide error message
 		this.hooks.errorMessage.classList.add("hidden");
 

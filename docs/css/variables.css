@@ -1,4 +1,7 @@
 body {
+	--section-max-width: 1280px;
+	--section-padding-default: 16px;
+	--section-padding-expanded: 40px;
 	--color-navy: #042159;
 	--color-navy-light: #e9eef7;
 	--color-purple: #5d62f4;
