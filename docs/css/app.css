@@ -18,8 +18,11 @@
 	font-weight: 500;
 }
 
+.quiz .error {
+	height: 0;
+}
+
 .quiz .error p {
-	margin: 10px 0;
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 13.8px;
@@ -131,7 +134,7 @@
 	background-color: var(--color-white);
 	border: 1px solid var(--color-black);
 	margin: 24px 0 12px 0;
-	padding: 16px;
+	padding: 16px 16px 36px 16px;
 	max-width: 590px;
 }
 
@@ -254,6 +257,10 @@
 	outline: none;
 	cursor: pointer;
 	margin-top: 1px;
+}
+
+.option-group .option input[type="radio"].has--error {
+	border-color: var(--color-error);
 }
 
 .option-group .option input[type="radio"]:checked {
@@ -643,7 +650,9 @@
 	.quiz__card {
 		min-height: 420px;
 		margin-top: 0;
-		padding: 24px;
+		padding-top: 24px;
+		padding-right: 24px;
+		padding-left: 24px;
 	}
 
 	.quiz__card .question {
