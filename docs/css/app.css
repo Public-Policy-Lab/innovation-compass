@@ -162,11 +162,17 @@
 
 .quiz__card .quiz__card__headline {
 	position: relative;
+	display: flex;
+	align-items: end;
+	gap: 24px;
 	margin: 0 0 24px 0;
+	padding-bottom: 12px;
+	border-bottom: 1px solid var(--color-navy);
 }
 
 .quiz__card .quiz__card__headline .headline {
-	display: inline;
+	flex: 1;
+	display: block;
 	font-size: 30px;
 	font-weight: 300;
 	line-height: 35px;
@@ -183,7 +189,7 @@
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	width: 30px;
+	width: 50px;
 	height: 30px;
 	margin: 0;
 	padding: 0;
@@ -201,7 +207,7 @@
 	min-width: 50%;
 	max-width: 100%;
 	width: 320px;
-	top: calc(100% + 7px);
+	top: 100%;
 	right: 0;
 	background-color: var(--color-white);
 	border: 1px solid var(--color-navy);
