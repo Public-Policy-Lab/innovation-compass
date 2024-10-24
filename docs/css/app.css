@@ -304,6 +304,7 @@
 
 .results-summary {
 	margin: 20px 0 0 0;
+	max-width: 266px;
 }
 
 .results-summary .eyebrow {
@@ -326,6 +327,10 @@
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 19.6px;
+}
+
+.results-summary .results-summary__slides {
+	padding-bottom: 10px;
 }
 
 .button {
@@ -356,6 +361,10 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
+}
+
+.results-summary .button {
+	border: none;
 }
 
 .results-share {
