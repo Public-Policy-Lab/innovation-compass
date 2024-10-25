@@ -304,6 +304,7 @@
 
 .results-summary {
 	margin: 20px 0 0 0;
+	max-width: 266px;
 }
 
 .results-summary .eyebrow {
@@ -326,6 +327,10 @@
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 19.6px;
+}
+
+.results-summary .results-summary__slides {
+	padding-bottom: 10px;
 }
 
 .button {
@@ -356,6 +361,10 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
+}
+
+.results-summary .button {
+	border: none;
 }
 
 .results-share {
@@ -415,15 +424,25 @@
 }
 
 .quiz__results-tabs ul li button.tab.tab--curated {
-	background: var(--color-navy-light);
+	background: var(--color-white);
+	border-color: var(--color-navy);
+	color: var(--color-navy);
+}
+
+.quiz__results-tabs ul li button.tab.tab--curated.tab--is-active {
+	background: var(--color-navy);
+	color: var(--color-white);
 }
 
 .quiz__results-tabs ul li button.tab.tab--all {
-	background: var(--color-neutral);
+	background: var(--color-white);
+	border-color: var(--color-beige);
+	color: var(--color-beige);
 }
 
-.quiz__results-tabs ul li button.tab.tab--is-active {
-	border-color: var(--color-navy);
+.quiz__results-tabs ul li button.tab.tab--all.tab--is-active {
+	background: var(--color-beige);
+	color: var(--color-white);
 }
 
 .quiz__results-tab-panels .tab-panel {
@@ -439,7 +458,7 @@
 }
 
 .quiz__results-tab-panels .tab-panel.tab-panel--all {
-	background: var(--color-neutral);
+	background: var(--color-beige-light);
 }
 
 .quiz__results-filters-activities-wrap {
@@ -546,7 +565,7 @@
 }
 
 .quiz__results-tab-panels .tab-panel.tab-panel--all .filter-group__options .options__overlay {
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--color-neutral) 70%);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--color-beige-light) 70%);
 }
 
 .filter-group .checkbox {
@@ -597,7 +616,6 @@
 }
 
 .quiz__activities .activity-group {
-	margin-bottom: 20px;
 	clear: both;
 }
 
