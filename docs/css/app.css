@@ -628,11 +628,6 @@
 	text-align: left;
 }
 
-.quiz__activities .bb-activity-tile-title {
-	font-size: 20px;
-	line-height: 26px;
-}
-
 .quiz__activities .button-text {
 	font-size: 14px;
 }
@@ -805,11 +800,6 @@
 
 	.results-summary {
 		grid-column: span 4;
-	}
-
-	.quiz__activities .bb-activity-tile-title {
-		font-size: 30px;
-		line-height: 36px;
 	}
 
 	.quiz__activities .button-text {

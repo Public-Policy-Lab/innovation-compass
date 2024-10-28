@@ -24,12 +24,16 @@
 	display: grid;
 }
 
+.bb-activity-tile-rounded-border .button {
+	align-self: flex-end;
+}
+
 .bb-activity-tile-title {
 	color: var(--color-navy);
 	font-family: "Gt Planar", sans-serif;
-	font-size: 30px;
+	font-size: 21px;
 	font-weight: 300;
-	line-height: 36px;
+	line-height: 27px;
 	text-decoration: none;
 }
 
@@ -40,10 +44,11 @@
 
 .bb-tag-text {
 	font-family: "Gt Planar", sans-serif;
-	letter-spacing: 0.3px;
+	letter-spacing: 0.07em;
 	text-transform: uppercase;
-	margin-right: 10px;
+	margin: 0 10px 6px 0;
 	font-size: 12px;
+	line-height: 13.8px;
 	font-weight: 500;
 	text-decoration: none;
 }
