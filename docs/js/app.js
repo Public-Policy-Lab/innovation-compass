@@ -111,7 +111,6 @@ const quizApp = {
 		// Buttons
 		this.hooks.buttons = {
 			start: document.querySelector("[data-start-button]"),
-			finish: document.querySelector("[data-finish-button]"),
 			nextFrame: document.querySelectorAll("[data-next-frame-button]"),
 			prevFrame: document.querySelectorAll("[data-prev-frame-button]"),
 			nextBlock: document.querySelector("[data-next-block-button]"),
@@ -121,9 +120,6 @@ const quizApp = {
 
 		this.hooks.buttons.start.addEventListener("click", () => {
 			this.startQuiz();
-		});
-		this.hooks.buttons.finish.addEventListener("click", () => {
-			this.skipToResults();
 		});
 		this.hooks.buttons.nextFrame.forEach((item) => {
 			item.addEventListener("click", () => {
