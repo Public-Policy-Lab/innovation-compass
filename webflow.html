@@ -1,0 +1,25 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H3ZP0XQ757"></script>
+<script>
+	function getGAValue() {
+		var match = document.cookie.match("(?:^|;)\\s*_ga=([^;]*)"),
+			raw = match ? decodeURIComponent(match[1]) : null;
+		if (raw) {
+			match = raw.match(/(\d+\.\d+)$/);
+		}
+		return match ? match[1] : null;
+	}
+
+	var ga_client_id = getGAValue() + "";
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag("js", new Date());
+	gtag("config", "G-H3ZP0XQ757", {
+		user_properties: {
+			client_id: ga_client_id,
+		},
+	});
+</script>
