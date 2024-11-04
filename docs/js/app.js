@@ -442,12 +442,13 @@ const quizApp = {
 		});
 
 		// Loop through the blocks and render the results
+		const numBlocks = Object.keys(this.blocks).length;
 		for (let block in this.blocks) {
 			const hand = document.querySelector("[data-hand-block-id='" + block + "']");
 			const average = this.blocks[block].average;
 
 			if (hand && average) {
-				hand.setAttribute("data-hand-reach", average);
+				hand.setAttribute("data-hand-reach", numBlocks - average);
 			}
 		}
 
