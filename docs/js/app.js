@@ -379,6 +379,13 @@ const quizApp = {
 
 		// Set the theme
 		this.setTheme(frame.category, "question");
+
+		// Trigger GA event
+		gtag("event", "page_view", {
+			page_path: "/quiz/step/" + this.currentFrame,
+			page_title: "Question: " + frame.activity_name,
+			page_location: window.location.href + "quiz/step/" + this.currentFrame,
+		});
 	},
 
 	renderTitle: function (frame) {
@@ -389,6 +396,13 @@ const quizApp = {
 
 		// Set the theme
 		this.setTheme(frame.category, "title");
+
+		// Trigger GA event
+		gtag("event", "page_view", {
+			page_path: "/quiz/step/" + this.currentFrame,
+			page_title: frame.activity_name,
+			page_location: window.location.href + "quiz/step/" + this.currentFrame,
+		});
 	},
 
 	renderResults: function () {
@@ -454,6 +468,13 @@ const quizApp = {
 
 		// Set the theme (default)
 		this.setTheme(null, null);
+
+		// Trigger GA event
+		gtag("event", "page_view", {
+			page_path: "/results",
+			page_title: "Results",
+			page_location: window.location.href + "results",
+		});
 	},
 
 	renderBlock: function () {
@@ -1014,6 +1035,19 @@ const quizApp = {
 		const ampm = hours24 >= 12 ? "pm" : "am";
 
 		return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}-${ampm}`;
+	},
+
+	triggerGAEvent: function (category, action, label) {
+		if (gtag === undefined) {
+			return;
+		}
+
+		console.log("Triggering GA event", category, action, label);
+
+		gtag("event", action, {
+			event_category: category,
+			event_label: label,
+		});
 	},
 };
 
