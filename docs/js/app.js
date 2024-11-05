@@ -381,7 +381,7 @@ const quizApp = {
 		gtag("event", "page_view", {
 			page_path: "/quiz/step/" + this.currentFrame,
 			page_title: "Question: " + frame.activity_name,
-			page_location: window.location.href + "quiz/step/" + this.currentFrame,
+			page_location: window.location.href + "/step/" + this.currentFrame,
 		});
 	},
 
