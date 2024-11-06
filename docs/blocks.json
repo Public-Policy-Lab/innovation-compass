@@ -1,98 +1,98 @@
 {
-    "public_presence": {
-      "title": "Public Presence",
-      "category": "Community",
-      "description": "The public recognition and support that has been garnered for your innovation.",
-      "average": null,
-      "priority": null,
-      "items": []
-    },
-    "community_connection": {
-      "title": "Community Connection",
-      "category": "Community",
-      "description": "The authentic relationships built with your community of impact.",
-      "average": null,
-      "priority": null,
-      "items": []
-    },
-    "compatible_collaborators": {
-      "title": "Compatible Collaborators",
-      "category": "Community",
-      "description": "The relationships and connections built with like-minded companies.",
-      "average": null,
-      "priority": null,
-      "items": []
-    },
-    "supportive_guides": {
-      "title": "Supportive Guides",
-      "category": "Community",
-      "description": "The relationships with guides who can support you on your innovation journey.",
-      "average": null,
-      "priority": null,
-      "items": []
-    },
-    "sustainable_funding": {
-      "title": "Sustainable Funding",
-      "category": "Entrepreneurship",
-      "description": "Navigate the funding landscape to secure sustainable funding for your innovation.",
-      "average": null,
-      "priority": null,
-      "items": []
-    },
-    "leadership_capacity": {
-      "title": "Leadership Capacity",
-      "category": "Entrepreneurship",
-      "description": "Cultivate leadership skills, mindsets, and habits to lead your team and fuel personal growth.",
-      "average": null,
-      "priority": null,
-      "items": []
-    },
-    "startup_tactics": {
-      "title": "Startup Tactics",
-      "category": "Entrepreneurship",
-      "description": "Learn business and startup best practices and adapt those practices for your own needs.",
-      "average": null,
-      "priority": null,
-      "items": []
-    },
-    "operating_infrastructure": {
-      "title": "Operating Infrastructure",
-      "category": "Entrepreneurship",
-      "description": "Set up basic operating systems, tools, and supports to launch and run your business.",
-      "average": null,
-      "priority": null,
-      "items": []
-    },
-    "foundational_vision": {
-      "title": "Foundational Vision",
-      "category": "Impact",
-      "description": "Set the groundwork to create a venture that drives meaningful change and lasting impact.",
-      "average": null,
-      "priority": null,
-      "items": []
-    },
-    "signature_strength": {
-      "title": "Signature Strength",
-      "category": "Impact",
-      "description": "Define your unique combination of skills, insights, and approaches that gives you a competitive edge.",
-      "average": null,
-      "priority": null,
-      "items": []
-    },
-    "proof_of_impact": {
-      "title": "Proof of Impact",
-      "category": "Impact",
-      "description": "Demonstrate the effectiveness of your innovation and its potential for long-term success.",
-      "average": null,
-      "priority": null,
-      "items": []
-    },
-    "equity_centered_practices": {
-      "title": "Equity-Centered Practices",
-      "category": "Impact",
-      "description": "Create intentional organizational practices that center the needs of historically disadvantaged stakeholders.",
-      "average": null,
-      "priority": null,
-      "items": []
-    }
+  "signature_strength": {
+    "title": "Signature Strength",
+    "category": "Impact",
+    "description": "Define your unique combination of skills, insights, and approaches that gives you a competitive edge.",
+    "average": null,
+    "priority": null,
+    "items": []
+  },
+  "proof_of_impact": {
+    "title": "Proof of Impact",
+    "category": "Impact",
+    "description": "Demonstrate the effectiveness of your innovation and its potential for long-term success.",
+    "average": null,
+    "priority": null,
+    "items": []
+  },
+  "equity_centered_practices": {
+    "title": "Equity-Centered Practices",
+    "category": "Impact",
+    "description": "Create intentional organizational practices that center the needs of historically disadvantaged stakeholders.",
+    "average": null,
+    "priority": null,
+    "items": []
+  },
+  "community_connection": {
+    "title": "Community Connection",
+    "category": "Community",
+    "description": "The authentic relationships built with your community of impact.",
+    "average": null,
+    "priority": null,
+    "items": []
+  },
+  "supportive_guides": {
+    "title": "Supportive Guides",
+    "category": "Community",
+    "description": "The relationships with guides who can support you on your innovation journey.",
+    "average": null,
+    "priority": null,
+    "items": []
+  },
+  "compatible_collaborators": {
+    "title": "Compatible Collaborators",
+    "category": "Community",
+    "description": "The relationships and connections built with like-minded companies.",
+    "average": null,
+    "priority": null,
+    "items": []
+  },
+  "public_presence": {
+    "title": "Public Presence",
+    "category": "Community",
+    "description": "The public recognition and support that has been garnered for your innovation.",
+    "average": null,
+    "priority": null,
+    "items": []
+  },
+  "operating_infrastructure": {
+    "title": "Operating Infrastructure",
+    "category": "Entrepreneurship",
+    "description": "Set up basic operating systems, tools, and supports to launch and run your business.",
+    "average": null,
+    "priority": null,
+    "items": []
+  },
+  "leadership_capacity": {
+    "title": "Leadership Capacity",
+    "category": "Entrepreneurship",
+    "description": "Cultivate leadership skills, mindsets, and habits to lead your team and fuel personal growth.",
+    "average": null,
+    "priority": null,
+    "items": []
+  },
+  "startup_tactics": {
+    "title": "Startup Tactics",
+    "category": "Entrepreneurship",
+    "description": "Learn business and startup best practices and adapt those practices for your own needs.",
+    "average": null,
+    "priority": null,
+    "items": []
+  },
+  "sustainable_funding": {
+    "title": "Sustainable Funding",
+    "category": "Entrepreneurship",
+    "description": "Navigate the funding landscape to secure sustainable funding for your innovation.",
+    "average": null,
+    "priority": null,
+    "items": []
+  },
+  "foundational_vision": {
+    "title": "Foundational Vision",
+    "category": "Impact",
+    "description": "Set the groundwork to create a venture that drives meaningful change and lasting impact.",
+    "average": null,
+    "priority": null,
+    "items": []
   }
+}

@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Quiz!</title>
+		<title>Quiz Local</title>
 
-    <link
-      href="https://cdn.prod.website-files.com/6658bec756a97f66072b9992/css/innovationcompass.webflow.827ed5d4c.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+		<link href="https://cdn.prod.website-files.com/6658bec756a97f66072b9992/css/innovationcompass.webflow.827ed5d4c.css" rel="stylesheet" type="text/css" />
 
-    <body>
-      <div id="quiz-container"></div>
+		<link href="css/app.css" rel="stylesheet" type="text/css" />
+	</head>
 
-      <!-- quiz js -->
-      <link href="css/app.css" rel="stylesheet" type="text/css" />
-      <script data-quiz-script src="js/app.js"></script>
-    </body>
-  </head>
+	<body>
+		<div id="quiz-container"></div>
+
+		<!-- quiz js -->
+
+		<script data-quiz-script src="js/app.js"></script>
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-H3ZP0XQ757"></script>
+		<script>
+			var GID = null;
+
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-H3ZP0XQ757");
+		</script>
+	</body>
 </html>
