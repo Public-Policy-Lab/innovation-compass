@@ -1,0 +1,16 @@
+body {
+	--section-max-width: 1280px;
+	--section-padding-default: 16px;
+	--section-padding-expanded: 40px;
+	--color-navy: #042159;
+	--color-navy-light: #e9eef7;
+	--color-purple: #5d62f4;
+	--color-purple-light: #dfe0fd;
+	--color-green: #3b817e;
+	--color-orange: #c45036;
+	--color-beige: #64665b;
+	--color-beige-light: #ecede7;
+	--color-white: #fff;
+	--color-black: #000;
+	--color-error: #c4291c;
+}

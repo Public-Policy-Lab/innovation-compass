@@ -1,0 +1,11 @@
+.text-purple {
+	color: var(--color-purple);
+}
+
+.text-green {
+	color: var(--color-green);
+}
+
+.text-orange {
+	color: var(--color-orange);
+}
