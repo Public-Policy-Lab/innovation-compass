@@ -34,7 +34,7 @@
         "building_block": "community_connection",
         "activity_name": "Get Involved and Share with the Innovation Community",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Getting involved and giving back to an innovation community can help you build a strong mutual support system with other innovators.",
         "activity_description": "Getting involved and giving back to an innovation community can help you build a strong mutual support system with other innovators.",
         "activity_url": "https://www.innovationcompass.io/activities/get-involved-and-share-with-the-innovation-community"
@@ -44,7 +44,7 @@
         "building_block": "community_connection",
         "activity_name": "Participate Actively in Your Community of Impact",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Your community of impact - those directly affected by the problem you're tackling - is one of the most important groups you will need to engage with throughout the life of your venture.",
         "activity_description": "Your community of impact - those directly affected by the problem you're tackling - is one of the most important groups you will need to engage with throughout the life of your venture.",
         "activity_url": "https://www.innovationcompass.io/activities/participate-actively-in-your-community-of-impact"
@@ -64,7 +64,7 @@
         "building_block": "compatible_collaborators",
         "activity_name": "Connect with Like-Minded Companies in Your Space",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Connecting with like-minded companies is foundational in creating a peer network of founders and businesses that are invested in learning and supporting one another.",
         "activity_description": "Connecting with like-minded companies is foundational in creating a peer network of founders and businesses that are invested in learning and supporting one another.",
         "activity_url": "https://www.innovationcompass.io/activities/connect-with-like-minded-companies-in-your-space"
@@ -74,7 +74,7 @@
         "building_block": "supportive_guides",
         "activity_name": "Identify Innovator Support Organizations That Can Help You Grow",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Innovator support organizations (ISOs) are groups that train, connect, and sometimes fund innovators.",
         "activity_description": "Innovator support organizations (ISOs) are groups that train, connect, and sometimes fund innovators.",
         "activity_url": "https://www.innovationcompass.io/activities/identify-innovator-support-organizations-that-can-help-you-grow"
@@ -84,7 +84,7 @@
         "building_block": "supportive_guides",
         "activity_name": "Connect with Experts, Mentors, and Partners in Your Area of Impact",
         "answer": null,
-        "weighting": 3,
+        "weighting": 1,
         "blurb": "Connecting with experts, mentors, and partners in your area of impact can help you navigate complex challenges and accelerate your progress.",
         "activity_description": "Connecting with experts, mentors, and partners in your area of impact can help you navigate complex challenges and accelerate your progress.",
         "activity_url": "https://www.innovationcompass.io/activities/connect-with-experts-mentors-and-partners-in-your-area-of-impact"
@@ -104,7 +104,7 @@
         "building_block": "sustainable_funding",
         "activity_name": "Learn about the Innovation Funding Landscape",
         "answer": null,
-        "weighting": 3,
+        "weighting": 1,
         "blurb": "Understanding the funding landscape can help you make informed decisions about funding your business, including optimizing fundraising strategies, negotiating more favorable terms with funders, and creating a sustainable financial strategy for the future.",
         "activity_description": "Understanding the funding landscape can help you make informed decisions about funding your business, including optimizing fundraising strategies, negotiating more favorable terms with funders, and creating a sustainable financial strategy for the future.",
         "activity_url": "https://www.innovationcompass.io/activities/learn-about-the-innovation-funding-landscape"
@@ -114,7 +114,7 @@
         "building_block": "sustainable_funding",
         "activity_name": "Identify Funders That Share Your Values",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Finding funders who align with your business's purpose and values ensures shared vision and strong mutual commitment.",
         "activity_description": "Finding funders who align with your business's purpose and values ensures shared vision and strong mutual commitment.",
         "activity_url": "https://www.innovationcompass.io/activities/identify-appropriate-funders-that-share-your-values"
@@ -124,7 +124,7 @@
         "building_block": "leadership_capacity",
         "activity_name": "Practice Clear and Persuasive Communication",
         "answer": null,
-        "weighting": 3,
+        "weighting": 1,
         "blurb": "Effective communication helps you clearly express your mission and values, making it easier to attract and connect with partners, funders, and candidates who share your goals.",
         "activity_description": "Effective communication helps you clearly express your mission and values, making it easier to attract and connect with partners, funders, and candidates who share your goals.",
         "activity_url": "https://www.innovationcompass.io/activities/practice-clear-and-persuasive-communication"
@@ -134,7 +134,7 @@
         "building_block": "leadership_capacity",
         "activity_name": "Set up and Engage an Advisory Board",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "An advisory board is a group of outside experts who provide strategic advice, guidance, and support to a venture's team and founders.",
         "activity_description": "An advisory board is a group of outside experts who provide strategic advice, guidance, and support to a venture's team and founders.",
         "activity_url": "https://www.innovationcompass.io/activities/set-up-and-engage-a-board-of-advisors"
@@ -154,7 +154,7 @@
         "building_block": "leadership_capacity",
         "activity_name": "Practice Telling Your Story",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "A compelling narrative builds confidence in your mission, helps you connect with potential partners, funders, and talent, and establishes your unique place in the innovation ecosystem.",
         "activity_description": "A compelling narrative builds confidence in your mission, helps you connect with potential partners, funders, and talent, and establishes your unique place in the innovation ecosystem.",
         "activity_url": "https://www.innovationcompass.io/activities/practice-telling-your-story"
@@ -164,7 +164,7 @@
         "building_block": "leadership_capacity",
         "activity_name": "Learn How to Identify Skill Gaps and Fill Them",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Identifying skill gaps and knowing how to fill them enables you to build a well-rounded, capable team that can tackle diverse challenges.",
         "activity_description": "Identifying skill gaps and knowing how to fill them enables you to build a well-rounded, capable team that can tackle diverse challenges.",
         "activity_url": "https://www.innovationcompass.io/activities/learn-how-to-identify-skill-gaps-and-how-to-fill-them"
@@ -184,7 +184,7 @@
         "building_block": "startup_tactics",
         "activity_name": "Learn about Product Development Best Practices",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "While every venture faces unique challenges, there are many tried and true methods and best practices.",
         "activity_description": "While every venture faces unique challenges, there are many tried and true methods and best practices.",
         "activity_url": "https://www.innovationcompass.io/activities/learn-about-product-development-best-practices"
@@ -194,7 +194,7 @@
         "building_block": "startup_tactics",
         "activity_name": "Build and Refine Your Business Model",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "A business model is a framework that describes how a company creates, delivers, and captures value.",
         "activity_description": "A business model is a framework that describes how a company creates, delivers, and captures value.",
         "activity_url": "https://www.innovationcompass.io/activities/build-and-refine-your-business-model"
@@ -204,7 +204,7 @@
         "building_block": "startup_tactics",
         "activity_name": "Create Your Business Strategy with Your Team",
         "answer": null,
-        "weighting": 3,
+        "weighting": 1,
         "blurb": "A business strategy is a high-level approach that outlines how a company will achieve its long-term goals and stand out among competition in the market.",
         "activity_description": "A business strategy is a high-level approach that outlines how a company will achieve its long-term goals and stand out among competition in the market.",
         "activity_url": "https://www.innovationcompass.io/activities/create-your-business-strategy-with-your-team"
@@ -224,7 +224,7 @@
         "building_block": "operating_infrastructure",
         "activity_name": "Develop a Summary of Your Revenue, Costs, and Expenses",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "A profit and loss (P&L) statement provides a picture of your venture's financial health and performance during a specific period of time.",
         "activity_description": "A profit and loss (P&L) statement provides a picture of your venture's financial health and performance during a specific period of time.",
         "activity_url": "https://www.innovationcompass.io/activities/develop-a-summary-of-your-revenue-costs-and-expenses"
@@ -234,7 +234,7 @@
         "building_block": "operating_infrastructure",
         "activity_name": "Protect the Intellectual Property of Your Business",
         "answer": null,
-        "weighting": 3,
+        "weighting": 1,
         "blurb": "Securing your intellectual property (IP) allows you to safeguard your unique ideas, inventions, and creations from unauthorized use or replication.",
         "activity_description": "Securing your intellectual property (IP) allows you to safeguard your unique ideas, inventions, and creations from unauthorized use or replication.",
         "activity_url": "https://www.innovationcompass.io/activities/protect-the-intellectual-property-of-your-business"
@@ -244,7 +244,7 @@
         "building_block": "operating_infrastructure",
         "activity_name": "Acquire Necessary Equipment and Materials",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Identifying and acquiring the foundational equipment and materials for your venture is a vital step in getting a business off the ground and operational.",
         "activity_description": "Identifying and acquiring the foundational equipment and materials for your venture is a vital step in getting a business off the ground and operational.",
         "activity_url": "https://www.innovationcompass.io/activities/acquire-necessary-equipment-and-materials"
@@ -254,7 +254,7 @@
         "building_block": "operating_infrastructure",
         "activity_name": "Register Your Business as a Legal Entity",
         "answer": null,
-        "weighting": 3,
+        "weighting": 1,
         "blurb": "Registering your business as a legal entity helps to legitimize your venture, protect your personal assets, and meet practical needs such as liability protection and paying taxes.",
         "activity_description": "Registering your business as a legal entity helps to legitimize your venture, protect your personal assets, and meet practical needs such as liability protection and paying taxes.",
         "activity_url": "https://www.innovationcompass.io/activities/register-your-business-as-a-legal-entity"
@@ -274,7 +274,7 @@
         "building_block": "foundational_vision",
         "activity_name": "Fall in Love with a Problem",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "A deep-seated concern for a specific problem and the drive to solve it are the bedrock of innovation.",
         "activity_description": "A deep-seated concern for a specific problem and the drive to solve it are the bedrock of innovation.",
         "activity_url": "https://www.innovationcompass.io/activities/fall-in-love-with-a-problem"
@@ -284,7 +284,7 @@
         "building_block": "foundational_vision",
         "activity_name": "Define a Vision and Purpose for the Innovation",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Defining a clear vision and purpose for a business provides a guiding north star, aligning all efforts and decisions towards a common goal while inspiring both team members and relevant groups.",
         "activity_description": "Defining a clear vision and purpose for a business provides a guiding north star, aligning all efforts and decisions towards a common goal while inspiring both team members and relevant groups.",
         "activity_url": "https://www.innovationcompass.io/activities/define-a-vision-and-purpose-for-the-innovation"
@@ -294,7 +294,7 @@
         "building_block": "foundational_vision",
         "activity_name": "Map Out Stakeholders",
         "answer": null,
-        "weighting": 3,
+        "weighting": 1,
         "blurb": "A stakeholder map is a visual representation of all the people, organizations, and entities impacted by the problem you seek to solve.",
         "activity_description": "A stakeholder map is a visual representation of all the people, organizations, and entities impacted by the problem you seek to solve.",
         "activity_url": "https://www.innovationcompass.io/activities/map-out-stakeholders"
@@ -304,7 +304,7 @@
         "building_block": "foundational_vision",
         "activity_name": "Define a Unique Approach to Solving the Problem",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "To provide value, your venture needs to define a unique approach to solving a specific problem that matters.",
         "activity_description": "To provide value, your venture needs to define a unique approach to solving a specific problem that matters.",
         "activity_url": "https://www.innovationcompass.io/activities/define-a-unique-approach-to-solving-the-problem"
@@ -314,7 +314,7 @@
         "building_block": "foundational_vision",
         "activity_name": "Sketch Out Your Theory of Change",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "A theory of change is a structured framework for how a set of assumptions and actions can lead to a set of anticipated outcomes.",
         "activity_description": "A theory of change is a structured framework for how a set of assumptions and actions can lead to a set of anticipated outcomes.",
         "activity_url": "https://www.innovationcompass.io/activities/sketch-out-your-theory-of-change"
@@ -324,7 +324,7 @@
         "building_block": "signature_strength",
         "activity_name": "Conduct Competitive Analysis and Define Key Differentiators",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "A competitive analysis is a method for evaluating how well your venture and the products or services you offer will perform compared to other ventures providing similar products or services.",
         "activity_description": "A competitive analysis is a method for evaluating how well your venture and the products or services you offer will perform compared to other ventures providing similar products or services.",
         "activity_url": "https://www.innovationcompass.io/activities/conduct-competitive-analysis-and-define-key-differentiators"
@@ -334,7 +334,7 @@
         "building_block": "signature_strength",
         "activity_name": "Define the Unique Value Proposition",
         "answer": null,
-        "weighting": 3,
+        "weighting": 1,
         "blurb": "A value proposition is a short statement that explains the unique benefits of your product or service to a target audience.",
         "activity_description": "A value proposition is a short statement that explains the unique benefits of your product or service to a target audience.",
         "activity_url": "https://www.innovationcompass.io/activities/define-the-unique-value-proposition"
@@ -354,7 +354,7 @@
         "building_block": "signature_strength",
         "activity_name": "Develop and Fine-Tune Your Elevator Pitch",
         "answer": null,
-        "weighting": 3,
+        "weighting": 1,
         "blurb": "An elevator pitch is a brief, persuasive speech you can use to spark interest among funders and investors in your venture and communicate how your venture provides value to your target audience.",
         "activity_description": "An elevator pitch is a brief, persuasive speech you can use to spark interest among funders and investors in your venture and communicate how your venture provides value to your target audience.",
         "activity_url": "https://www.innovationcompass.io/activities/develop-and-fine-tune-your-elevator-pitch"
@@ -364,7 +364,7 @@
         "building_block": "signature_strength",
         "activity_name": "Build and Iterate on Your Minimum Viable Product",
         "answer": null,
-        "weighting": 3,
+        "weighting": 1,
         "blurb": "A minimum viable product (MVP) is a preliminary version of a product with a limited set of key features that can be used by early customers to provide feedback for future product development.",
         "activity_description": "A minimum viable product (MVP) is a preliminary version of a product with a limited set of key features that can be used by early customers to provide feedback for future product development.",
         "activity_url": "https://www.innovationcompass.io/activities/build-and-iterate-on-your-minimum-viable-product"
@@ -374,7 +374,7 @@
         "building_block": "proof_of_impact",
         "activity_name": "Conduct Secondary Research",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Conducting comprehensive secondary research, or desk research, ensures that your innovation builds upon existing knowledge and targets areas that have not already been reached, allowing you stand out among competitors.",
         "activity_description": "Conducting comprehensive secondary research, or desk research, ensures that your innovation builds upon existing knowledge and targets areas that have not already been reached, allowing you stand out among competitors.",
         "activity_url": "https://www.innovationcompass.io/activities/conduct-secondary-research"
@@ -384,7 +384,7 @@
         "building_block": "proof_of_impact",
         "activity_name": "Develop a Plan for Proving Your Impact",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Giving evidence of impact means proving your innovation actually delivers on its promises, showing real results instead of just good intentions.",
         "activity_description": "Giving evidence of impact means proving your innovation actually delivers on its promises, showing real results instead of just good intentions.",
         "activity_url": "https://www.innovationcompass.io/activities/develop-a-plan-for-proving-your-impact"
@@ -394,7 +394,7 @@
         "building_block": "proof_of_impact",
         "activity_name": "Interview Relevant People Relentlessly",
         "answer": null,
-        "weighting": 3,
+        "weighting": 1,
         "blurb": "Making the space and time to interview people - whether that's your target audience, funders, investors, community leaders, or subject-matter experts - ensures that you stay in touch with their needs, preferences, and pain points.",
         "activity_description": "Making the space and time to interview people - whether that's your target audience, funders, investors, community leaders, or subject-matter experts - ensures that you stay in touch with their needs, preferences, and pain points.",
         "activity_url": "https://www.innovationcompass.io/activities/interview-relevant-people-relentlessly"
@@ -414,7 +414,7 @@
         "building_block": "equity_centered_practices",
         "activity_name": "Identify the Core Values That Drive Your Work",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Defining your venture's core values can shape your venture's culture, decision-making processes, and overall direction.",
         "activity_description": "Defining your venture's core values can shape your venture's culture, decision-making processes, and overall direction.",
         "activity_url": "https://www.innovationcompass.io/activities/identify-the-core-values-that-drive-your-work"
@@ -424,7 +424,7 @@
         "building_block": "equity_centered_practices",
         "activity_name": "Set up Internal Systems for Collaboration",
         "answer": null,
-        "weighting": 2,
+        "weighting": 1,
         "blurb": "Creating streamlined collaboration systems is vital for launching and scaling your business, as these systems promote transparency and ensure that your team knows where, when, and how they can work together towards shared goals - ultimately boosting their productivity.",
         "activity_description": "Creating streamlined collaboration systems is vital for launching and scaling your business, as these systems promote transparency and ensure that your team knows where, when, and how they can work together towards shared goals - ultimately boosting their productivity.",
         "activity_url": "https://www.innovationcompass.io/activities/set-up-internal-systems-for-collaboration"
