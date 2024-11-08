@@ -844,7 +844,8 @@ const quizApp = {
 	buildActivityGroup: function (type, activity) {
 		if (type == "curated") {
 			var headline = "The following practices are a <strong>" + activity.priority_name + "</strong> recommendation for you";
-			var tooltip = "Your chart shows results based on your preparedness level and practice importance, as rated by early-stage innovators and experts.";
+			var tooltip = "Based on your quiz results, innovators and experts believe these practices are of <strong>" + activity.priority_name + "</strong> priority for you
+";
 			var activity_group_id = activity.priority_name;
 		} else {
 			// replace underscores with spaces
