@@ -843,14 +843,14 @@ const quizApp = {
 
 	buildActivityGroup: function (type, activity) {
 		if (type == "curated") {
-			var headline = "The following activities are a <strong>" + activity.priority_name + "</strong> recommendation for you";
-			var tooltip = "Your chart shows results based on your preparedness level and activity importance, as rated by early-stage innovators and experts.";
+			var headline = "The following practices are a <strong>" + activity.priority_name + "</strong> recommendation for you";
+			var tooltip = "Your chart shows results based on your preparedness level and practice importance, as rated by early-stage innovators and experts.";
 			var activity_group_id = activity.priority_name;
 		} else {
 			// replace underscores with spaces
 			preparedness = activity.preparedness.replace(/_/g, " ");
-			var headline = "You indicated that you are <strong>" + preparedness + "</strong> for the following activities";
-			var tooltip = "The following activities are organized by your preparedness level based on your quiz results.";
+			var headline = "You indicated that you are <strong>" + preparedness + "</strong> for the following practices";
+			var tooltip = "The following practices are organized by your preparedness level based on your quiz results.";
 			var activity_group_id = activity.preparedness;
 		}
 
