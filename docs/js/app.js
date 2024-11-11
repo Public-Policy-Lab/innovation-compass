@@ -465,7 +465,7 @@ const quizApp = {
 			const average = this.blocks[block].average;
 
 			if (hand) {
-				hand.setAttribute("data-hand-reach", Math.round(.87 * average) * 3 + 1);
+				hand.setAttribute("data-hand-reach", Math.round(.9 * average * 3) + 1);
 			}
 		}
 
