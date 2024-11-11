@@ -670,9 +670,9 @@ const quizApp = {
 			this.blocks[block].average = Math.round(this.blocks[block].average);
 		}
 
-		// Add priority to the blocks
+		// Add proficiency to the blocks
 		for (let block in this.blocks) {
-			this.blocks[block].priority = this.getPriority(this.blocks[block].average);
+			this.blocks[block].priority = this.getProficiency(this.blocks[block].average);
 		}
 
 		this.blockKeys = Object.keys(this.blocks);
@@ -763,13 +763,23 @@ const quizApp = {
 		return 0;
 	},
 
-	getPriority: function (score) {
+	getProficiency: function (score) {
 		if (score <= 1) {
 			return "low";
 		} else if (score <= 3) {
 			return "medium";
 		} else {
 			return "high";
+		}
+	},
+
+	getPriority: function (score) {
+		if (score <= 1) {
+			return "high";
+		} else if (score <= 3) {
+			return "medium";
+		} else {
+			return "low";
 		}
 	},
 
