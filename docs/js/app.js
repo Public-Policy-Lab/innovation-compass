@@ -20,6 +20,7 @@ const quizApp = {
 	baseUrl: "https://public-policy-lab.github.io/innovation-compass/",
 	currentDateTime: null,
 	gid: null,
+	participantId: null,
 
 	init: function () {
 		if (window.location.hostname != "www.innovationcompass.io") {
@@ -1022,10 +1023,14 @@ const quizApp = {
 		token = token.slice(0, -1);
 		token += "";
 
+		// get participant ID from cookie
+		const participant_id = this.getCookie("participant_id");
+
 		searchParams = new URLSearchParams();
 		searchParams.set("r", token);
 		searchParams.set("datetime", this.currentDateTime);
 		searchParams.set("gid", this.gid);
+		searchParams.set("pid", participant_id);
 		window.location = "#" + searchParams.toString();
 	},
 
@@ -1059,6 +1064,13 @@ const quizApp = {
 			event_category: category,
 			event_label: label,
 		});
+	},
+
+	getCookie: function (name) {
+		// get cookie
+		const value = `; ${document.cookie}`;
+		const parts = value.split(`; ${name}=`);
+		if (parts.length === 2) return parts.pop().split(";").shift();
 	},
 };
 
