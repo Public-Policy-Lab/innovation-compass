@@ -205,12 +205,6 @@ const quizApp = {
 	},
 
 	nextFrame: function () {
-		// Check to see if current frame is the last frame
-		if (this.currentFrame === this.quiz.length - 1) {
-			this.finishQuiz();
-			return;
-		}
-
 		// Get current answer from radio buttons
 		const frame = this.quiz[this.currentFrame];
 
@@ -218,7 +212,15 @@ const quizApp = {
 			const answer = document.querySelector("[data-answer]:checked");
 			if (answer) {
 				this.quiz[this.currentFrame].answer = answer.value;
+
+				// Check to see if current frame is the last frame
+				if (this.currentFrame === this.quiz.length - 1) {
+					this.finishQuiz();
+					return;
+				}
+
 				this.currentFrame++;
+
 				this.renderFrame();
 			} else {
 				document.querySelectorAll("[data-answer]").forEach((answer) => {
