@@ -525,36 +525,45 @@ const quizApp = {
 	},
 
 	setTheme: function (category, type) {
+		const colors = {
+			purple: "#5D62F4",
+			purpleLight: "#DFE0FD",
+			red: "#E76446",
+			redLight: "#FAE0DA",
+			green: "#3B817E",
+			greenLight: "#D0DEDD",
+		};
+
 		switch (category + "-" + type) {
 			case "community-title":
-				this.hooks.containers.quiz.style.background = "#5D62F4";
-				this.hooks.headlines.quizTitle.style.color = "#DFE0FD";
-				this.hooks.progress.bar.style.background = "#5D62F4";
+				this.hooks.containers.quiz.style.background = colors.green;
+				this.hooks.headlines.quizTitle.style.color = colors.greenLight;
+				this.hooks.progress.bar.style.background = colors.green;
 				break;
 			case "community-question":
-				this.hooks.containers.quiz.style.background = "#DFE0FD";
-				this.hooks.headlines.quizQuestion.style.color = "#5D62F4";
-				this.hooks.progress.bar.style.background = "#5D62F4";
+				this.hooks.containers.quiz.style.background = colors.greenLight;
+				this.hooks.headlines.quizQuestion.style.color = colors.green;
+				this.hooks.progress.bar.style.background = colors.green;
 				break;
 			case "entrepreneurship-title":
-				this.hooks.containers.quiz.style.background = "#E76446";
-				this.hooks.headlines.quizTitle.style.color = "#FAE0DA";
-				this.hooks.progress.bar.style.background = "#E76446";
+				this.hooks.containers.quiz.style.background = colors.red;
+				this.hooks.headlines.quizTitle.style.color = colors.redLight;
+				this.hooks.progress.bar.style.background = colors.red;
 				break;
 			case "entrepreneurship-question":
-				this.hooks.containers.quiz.style.background = "#FAE0DA";
-				this.hooks.headlines.quizQuestion.style.color = "#E76446";
-				this.hooks.progress.bar.style.background = "#E76446";
+				this.hooks.containers.quiz.style.background = colors.redLight;
+				this.hooks.headlines.quizQuestion.style.color = colors.red;
+				this.hooks.progress.bar.style.background = colors.red;
 				break;
 			case "impact-title":
-				this.hooks.containers.quiz.style.background = "#3B817E";
-				this.hooks.headlines.quizTitle.style.color = "#D0DEDD";
-				this.hooks.progress.bar.style.background = "#3B817E";
+				this.hooks.containers.quiz.style.background = colors.purple;
+				this.hooks.headlines.quizTitle.style.color = colors.purpleLight;
+				this.hooks.progress.bar.style.background = colors.purple;
 				break;
 			case "impact-question":
-				this.hooks.containers.quiz.style.background = "#D0DEDD";
-				this.hooks.headlines.quizQuestion.style.color = "#3B817E";
-				this.hooks.progress.bar.style.background = "#3B817E";
+				this.hooks.containers.quiz.style.background = colors.purpleLight;
+				this.hooks.headlines.quizQuestion.style.color = colors.purple;
+				this.hooks.progress.bar.style.background = colors.purple;
 				break;
 			default:
 				this.hooks.containers.quiz.style.background = "#fff";
