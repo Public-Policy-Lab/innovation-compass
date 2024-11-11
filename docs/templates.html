@@ -9,30 +9,33 @@
 			<div
 				class="quiz__layout quiz__layout--start">
 				<div
-					class="quiz__header">
-					<h1
-						class="headline">Innovator Quiz</h1>
-					<p>Assess your strengths and weaknesses based on Innovation Building Blocks.</p>
+					class="quiz__header-wrap">
+					<div
+						class="quiz__header">
+						<h1
+							class="headline">Innovator Quiz</h1>
+						<p>Assess your strengths and weaknesses based on Innovation Building Blocks.</p>
+					</div>
 				</div>
 				<div
-					class="quiz__body">
+					class="quiz__body-wrap">
 					<div
-						class="quiz__summary">
-						<h2>Innovation Building Blocks</h2>
-						<p>The Innovator Building Blocks consist of 40 essential activities identified by innovators during the Compass Pilot co-design process. Inspired by the real journeys of other early-stage innovators, the building blocks seek to demystify the often challenging and ambiguous experience of starting your own company. The building block activities aim to foster a comprehensive understanding of what it takes to take a budding idea and transform it into a sustainable venture by providing guidance on essential topics such as vision setting, sustainable funding, business operations, and more.</p>
-						<h2>Quiz</h2>
-						<p>To help you navigate your innovation journey, our assessment quiz can guide you on where to focus your efforts. The quiz should take 10-15 min to complete and contains 40 questions divided in 3 sections.</p>
+						class="quiz__body">
 						<div
-							class="buttons">
-							<button
-								data-start-button
-								class="button w-inline-block">
-								<div
-									class="button-text">Begin the Quiz</div>
-							</button>
-							<br/>
-							<button
-								data-finish-button>Skip to Results (dev)</button>
+							class="quiz__summary">
+							<h2>Innovation Building Blocks</h2>
+							<p>The Innovator Building Blocks consist of 40 essential practices identified by innovators during the Compass Pilot co-design process. Inspired by the real journeys of other early-stage innovators, the building blocks seek to demystify the often challenging and ambiguous experience of starting your own company. The building block activities aim to foster a comprehensive understanding of what it takes to take a budding idea and transform it into a sustainable venture by providing guidance on essential topics such as vision setting, sustainable funding, business operations, and more.</p>
+							<h2>Quiz</h2>
+							<p>To help you navigate your innovation journey, our assessment quiz can guide you on where to focus your efforts. The quiz should take 10-15 min to complete and contains 40 questions divided in 3 sections.</p>
+							<div
+								class="buttons">
+								<button
+									data-start-button
+									class="button w-inline-block">
+									<div
+										class="button-text">Begin the Quiz</div>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -46,36 +49,42 @@
 			<div
 				class="quiz__layout quiz__layout--title">
 				<div
-					class="quiz__header">
-					<h1
-						data-quiz-title-headline
-						class="headline">Innovator Quiz</h1>
+					class="quiz__header-wrap">
+					<div
+						class="quiz__header">
+						<h1
+							data-quiz-title-headline
+							class="headline">Innovator Quiz</h1>
+					</div>
 				</div>
 				<div
-					class="quiz__body">
+					class="quiz__body-wrap">
 					<div
-						class="quiz__progress"></div>
-					<div
-						class="quiz__card-wrap">
+						class="quiz__body">
 						<div
-							class="quiz__card">
+							class="quiz__progress"></div>
+						<div
+							class="quiz__card-wrap">
 							<div
-								class="quiz__card__headline quiz__card__headline--titlepage">
-								<h2
-									data-title-headline
-									class="headline"></h2>
+								class="quiz__card">
+								<div
+									class="quiz__card__headline quiz__card__headline--titlepage">
+									<h2
+										data-title-headline
+										class="headline"></h2>
+								</div>
+								<p
+									data-title-blurb
+									class="blurb"></p>
 							</div>
-							<p
-								data-title-blurb
-								class="blurb"></p>
-						</div>
-						<div
-							class="quiz__buttons">
-							<button
-								data-next-frame-button
-								class="button w-inline-block">
-								<span>Start this Category</span>
-							</button>
+							<div
+								class="quiz__buttons">
+								<button
+									data-next-frame-button
+									class="button w-inline-block">
+									<span>Start this Category</span>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -89,172 +98,178 @@
 			<div
 				class="quiz__layout quiz__layout--question">
 				<div
-					class="quiz__header">
-					<h1
-						data-quiz-question-headline
-						class="headline">Innovator Quiz</h1>
+					class="quiz__header-wrap">
+					<div
+						class="quiz__header">
+						<h1
+							data-quiz-question-headline
+							class="headline">Innovator Quiz</h1>
+					</div>
 				</div>
 				<div
-					class="quiz__body">
+					class="quiz__body-wrap">
 					<div
-						class="quiz__progress">
+						class="quiz__body">
 						<div
-							class="quiz__progress-text">
+							class="quiz__progress">
 							<div
-								class="quiz__progress-text__inner">
-								<div>
-									<strong>Category</strong>
-								</div>
-								<div>
-									<span
-										data-category-body></span>
-									(<span
-										data-category-number></span>)
-								</div>
-							</div>
-							<div>
-								<strong>
-									<span
-										data-progress-percent></span>
-									complete</strong>
-							</div>
-						</div>
-						<!-- progress bar -->
-						<div
-							class="quiz__progress-bar">
-							<div
-								class="quiz__progress-bar__fill"
-								data-progress-bar-fill></div>
-						</div>
-					</div>
-					<div
-						class="quiz__card-wrap">
-						<div
-							class="quiz__card">
-							<p
-								class="question">How prepared are you or your team to accomplish the following?</p>
-							<div
-								class="quiz__card__headline">
-								<h2
-									data-question-headline
-									class="headline"></h2>
-								<button
-									class="info-button">
-									<svg
-										width="15"
-										height="15"
-										viewbox="0 0 15 15"
-										fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M6.5625 10.6875H7.6875V6.375H6.5625V10.6875ZM7.125 5.09137C7.29663 5.09137 7.4405 5.03331 7.55662 4.91719C7.67275 4.80106 7.73081 4.65719 7.73081 4.48556C7.73081 4.31394 7.67275 4.17006 7.55662 4.05394C7.4405 3.93794 7.29663 3.87994 7.125 3.87994C6.95337 3.87994 6.8095 3.93794 6.69338 4.05394C6.57725 4.17006 6.51919 4.31394 6.51919 4.48556C6.51919 4.65719 6.57725 4.80106 6.69338 4.91719C6.8095 5.03331 6.95337 5.09137 7.125 5.09137ZM7.12631 14.25C6.14081 14.25 5.2145 14.063 4.34737 13.689C3.48025 13.315 2.726 12.8074 2.08462 12.1663C1.44325 11.5252 0.935437 10.7713 0.561187 9.9045C0.187062 9.03775 0 8.11169 0 7.12631C0 6.14081 0.187 5.2145 0.561 4.34737C0.935 3.48025 1.44256 2.726 2.08369 2.08462C2.72481 1.44325 3.47875 0.935437 4.3455 0.561187C5.21225 0.187062 6.13831 0 7.12369 0C8.10919 0 9.0355 0.187 9.90263 0.561C10.7698 0.935 11.524 1.44256 12.1654 2.08369C12.8068 2.72481 13.3146 3.47875 13.6888 4.3455C14.0629 5.21225 14.25 6.13831 14.25 7.12369C14.25 8.10919 14.063 9.0355 13.689 9.90263C13.315 10.7698 12.8074 11.524 12.1663 12.1654C11.5252 12.8068 10.7713 13.3146 9.9045 13.6888C9.03775 14.0629 8.11169 14.25 7.12631 14.25ZM7.125 13.125C8.8 13.125 10.2188 12.5437 11.3813 11.3813C12.5437 10.2188 13.125 8.8 13.125 7.125C13.125 5.45 12.5437 4.03125 11.3813 2.86875C10.2188 1.70625 8.8 1.125 7.125 1.125C5.45 1.125 4.03125 1.70625 2.86875 2.86875C1.70625 4.03125 1.125 5.45 1.125 7.125C1.125 8.8 1.70625 10.2188 2.86875 11.3813C4.03125 12.5437 5.45 13.125 7.125 13.125Z"
-											fill="#042159"/>
-									</svg>
-								</button>
+								class="quiz__progress-text">
 								<div
-									class="blurb-wrap">
-									<div
-										class="blurb-close-button">
+									class="quiz__progress-text__inner">
+									<div>
+										<strong>Category</strong>
+									</div>
+									<div>
+										<span
+											data-category-body></span>
+										(<span
+											data-category-number></span>)
+									</div>
+								</div>
+								<div>
+									<strong>
+										<span
+											data-progress-percent></span>
+										complete</strong>
+								</div>
+							</div>
+							<!-- progress bar -->
+							<div
+								class="quiz__progress-bar">
+								<div
+									class="quiz__progress-bar__fill"
+									data-progress-bar-fill></div>
+							</div>
+						</div>
+						<div
+							class="quiz__card-wrap">
+							<div
+								class="quiz__card">
+								<p
+									class="question">How prepared are you or your team to accomplish the following?</p>
+								<div
+									class="quiz__card__headline">
+									<h2
+										data-question-headline
+										class="headline"></h2>
+									<button
+										class="info-button">
 										<svg
-											xmlns="http://www.w3.org/2000/svg"
+											width="15"
+											height="15"
+											viewbox="0 0 15 15"
 											fill="none"
-											viewbox="0 0 20 19">
+											xmlns="http://www.w3.org/2000/svg">
 											<path
-												stroke="currentColor"
-												d="M1 18 19 1m0 17L1 1"/>
+												d="M6.5625 10.6875H7.6875V6.375H6.5625V10.6875ZM7.125 5.09137C7.29663 5.09137 7.4405 5.03331 7.55662 4.91719C7.67275 4.80106 7.73081 4.65719 7.73081 4.48556C7.73081 4.31394 7.67275 4.17006 7.55662 4.05394C7.4405 3.93794 7.29663 3.87994 7.125 3.87994C6.95337 3.87994 6.8095 3.93794 6.69338 4.05394C6.57725 4.17006 6.51919 4.31394 6.51919 4.48556C6.51919 4.65719 6.57725 4.80106 6.69338 4.91719C6.8095 5.03331 6.95337 5.09137 7.125 5.09137ZM7.12631 14.25C6.14081 14.25 5.2145 14.063 4.34737 13.689C3.48025 13.315 2.726 12.8074 2.08462 12.1663C1.44325 11.5252 0.935437 10.7713 0.561187 9.9045C0.187062 9.03775 0 8.11169 0 7.12631C0 6.14081 0.187 5.2145 0.561 4.34737C0.935 3.48025 1.44256 2.726 2.08369 2.08462C2.72481 1.44325 3.47875 0.935437 4.3455 0.561187C5.21225 0.187062 6.13831 0 7.12369 0C8.10919 0 9.0355 0.187 9.90263 0.561C10.7698 0.935 11.524 1.44256 12.1654 2.08369C12.8068 2.72481 13.3146 3.47875 13.6888 4.3455C14.0629 5.21225 14.25 6.13831 14.25 7.12369C14.25 8.10919 14.063 9.0355 13.689 9.90263C13.315 10.7698 12.8074 11.524 12.1663 12.1654C11.5252 12.8068 10.7713 13.3146 9.9045 13.6888C9.03775 14.0629 8.11169 14.25 7.12631 14.25ZM7.125 13.125C8.8 13.125 10.2188 12.5437 11.3813 11.3813C12.5437 10.2188 13.125 8.8 13.125 7.125C13.125 5.45 12.5437 4.03125 11.3813 2.86875C10.2188 1.70625 8.8 1.125 7.125 1.125C5.45 1.125 4.03125 1.70625 2.86875 2.86875C1.70625 4.03125 1.125 5.45 1.125 7.125C1.125 8.8 1.70625 10.2188 2.86875 11.3813C4.03125 12.5437 5.45 13.125 7.125 13.125Z"
+												fill="#042159"/>
 										</svg>
+									</button>
+									<div
+										class="blurb-wrap">
+										<div
+											class="blurb-close-button">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												fill="none"
+												viewbox="0 0 20 19">
+												<path
+													stroke="currentColor"
+													d="M1 18 19 1m0 17L1 1"/>
+											</svg>
+										</div>
+										<div
+											class="blurb">
+											<h3>Why this is important</h3>
+											<p
+												data-question-blurb></p>
+										</div>
+									</div>
+								</div>
+								<div
+									class="option-group">
+									<div
+										class="option">
+										<input
+											type="radio"
+											id="option1"
+											name="answer"
+											value="0"
+											data-answer
+											data-answer-0/>
+										<label
+											for="option1">Unprepared</label>
 									</div>
 									<div
-										class="blurb">
-										<h3>What this looks like</h3>
-										<p
-											data-question-blurb></p>
+										class="option">
+										<input
+											type="radio"
+											id="option2"
+											name="answer"
+											value="1"
+											data-answer
+											data-answer-1/>
+										<label
+											for="option2">Somewhat Prepared</label>
+									</div>
+									<div
+										class="option">
+										<input
+											type="radio"
+											id="option3"
+											name="answer"
+											value="2"
+											data-answer
+											data-answer-2/>
+										<label
+											for="option3">Adequately Prepared</label>
+									</div>
+									<div
+										class="option">
+										<input
+											type="radio"
+											id="option4"
+											name="answer"
+											value="3"
+											data-answer
+											data-answer-3/>
+										<label
+											for="option4">Very Prepared</label>
+									</div>
+									<div
+										class="option">
+										<input
+											type="radio"
+											id="option5"
+											name="answer"
+											value="4"
+											data-answer
+											data-answer-4/>
+										<label
+											for="option5">Extremely Prepared</label>
 									</div>
 								</div>
-							</div>
-							<div
-								class="option-group">
 								<div
-									class="option">
-									<input
-										type="radio"
-										id="option1"
-										name="answer"
-										value="0"
-										data-answer
-										data-answer-0/>
-									<label
-										for="option1">Unprepared</label>
-								</div>
-								<div
-									class="option">
-									<input
-										type="radio"
-										id="option2"
-										name="answer"
-										value="1"
-										data-answer
-										data-answer-1/>
-									<label
-										for="option2">Somewhat Prepared</label>
-								</div>
-								<div
-									class="option">
-									<input
-										type="radio"
-										id="option3"
-										name="answer"
-										value="2"
-										data-answer
-										data-answer-2/>
-									<label
-										for="option3">Adequately Prepared</label>
-								</div>
-								<div
-									class="option">
-									<input
-										type="radio"
-										id="option4"
-										name="answer"
-										value="3"
-										data-answer
-										data-answer-3/>
-									<label
-										for="option4">Very Prepared</label>
-								</div>
-								<div
-									class="option">
-									<input
-										type="radio"
-										id="option5"
-										name="answer"
-										value="4"
-										data-answer
-										data-answer-4/>
-									<label
-										for="option5">Extremely Prepared</label>
+									data-error-message
+									class="error error--no-selection hidden">
+									<p>Please make a selection from the options above</p>
 								</div>
 							</div>
 							<div
-								data-error-message
-								class="error error--no-selection hidden">
-								<p>Please make a selection from the options above</p>
+								class="quiz__buttons">
+								<button
+									data-prev-frame-button
+									class="button w-inline-block">
+									<div
+										class="button__arrow-left"></div>
+								</button>
+								<button
+									data-next-frame-button
+									class="button w-inline-block">
+									<div
+										class="button__arrow-right"></div>
+								</button>
 							</div>
-						</div>
-						<div
-							class="quiz__buttons">
-							<button
-								data-prev-frame-button
-								class="button w-inline-block">
-								<div
-									class="button__arrow-left"></div>
-							</button>
-							<button
-								data-next-frame-button
-								class="button w-inline-block">
-								<div
-									class="button__arrow-right"></div>
-							</button>
 						</div>
 					</div>
 				</div>
@@ -268,230 +283,245 @@
 			<div
 				class="quiz__layout quiz__layout--results">
 				<div
-					class="quiz__header">
-					<h1
-						class="headline">Quiz Results</h1>
+					class="quiz__header-wrap">
+					<div
+						class="quiz__header">
+						<h1
+							class="headline">Quiz Results</h1>
+					</div>
 				</div>
 				<div
-					class="quiz__body w-clearfix">
-					<!-- Results page: Graphic & Summary -->
+					class="quiz__body-wrap">
 					<div
-						class="quiz__results-graphic-summary">
+						class="quiz__body">
+						<!-- Results page: Graphic & Summary -->
 						<div
-							class="results-graph">
+							class="quiz__results-graphic-summary">
 							<div
-								class="clock-container">
+								class="results-graph">
 								<div
-									class="clock">
+									class="clock-container">
 									<div
-										class="ring ring--1"></div>
-									<div
-										class="ring ring--2"></div>
-									<div
-										class="ring ring--3"></div>
-									<div
-										data-result-hands
-										class="clock-hands">
+										class="clock">
 										<div
-											data-hand
-											data-hand-reach="1"
-											data-hand-color="1"
-											data-hand-block-id="proof_of_impact"
-											class="hand hand--1"></div>
+											class="ring ring--1"></div>
 										<div
-											data-hand
-											data-hand-reach="2"
-											data-hand-color="1"
-											data-hand-block-id="equity_centered_practices"
-											class="hand hand--2"></div>
+											class="ring ring--2"></div>
 										<div
-											data-hand
-											data-hand-reach="3"
-											data-hand-color="2"
-											data-hand-block-id="community_connection"
-											class="hand hand--3"></div>
+											class="ring ring--3"></div>
 										<div
-											data-hand
-											data-hand-reach="4"
-											data-hand-color="2"
-											data-hand-block-id="supportive_guides"
-											class="hand hand--4"></div>
+											data-result-hands
+											class="clock-hands">
+											<div
+												data-hand
+												data-hand-reach="1"
+												data-hand-color="1"
+												data-hand-block-id="proof_of_impact"
+												class="hand hand--1"></div>
+											<div
+												data-hand
+												data-hand-reach="2"
+												data-hand-color="1"
+												data-hand-block-id="equity_centered_practices"
+												class="hand hand--2"></div>
+											<div
+												data-hand
+												data-hand-reach="3"
+												data-hand-color="2"
+												data-hand-block-id="community_connection"
+												class="hand hand--3"></div>
+											<div
+												data-hand
+												data-hand-reach="4"
+												data-hand-color="2"
+												data-hand-block-id="supportive_guides"
+												class="hand hand--4"></div>
+											<div
+												data-hand
+												data-hand-reach="5"
+												data-hand-color="2"
+												data-hand-block-id="compatible_collaborators"
+												class="hand hand--5"></div>
+											<div
+												data-hand
+												data-hand-reach="6"
+												data-hand-color="2"
+												data-hand-block-id="public_presence"
+												class="hand hand--6"></div>
+											<div
+												data-hand
+												data-hand-reach="7"
+												data-hand-color="3"
+												data-hand-block-id="operating_infrastructure"
+												class="hand hand--7"></div>
+											<div
+												data-hand
+												data-hand-reach="8"
+												data-hand-color="3"
+												data-hand-block-id="leadership_capacity"
+												class="hand hand--8"></div>
+											<div
+												data-hand
+												data-hand-reach="9"
+												data-hand-color="3"
+												data-hand-block-id="startup_tactics"
+												class="hand hand--9"></div>
+											<div
+												data-hand
+												data-hand-reach="10"
+												data-hand-color="3"
+												data-hand-block-id="sustainable_funding"
+												class="hand hand--10"></div>
+											<div
+												data-hand
+												data-hand-reach="11"
+												data-hand-color="1"
+												data-hand-block-id="foundational_vision"
+												class="hand hand--11"></div>
+											<div
+												data-hand
+												data-hand-reach="12"
+												data-hand-color="1"
+												data-hand-block-id="signature_strength"
+												class="hand hand--12"></div>
+										</div>
 										<div
-											data-hand
-											data-hand-reach="5"
-											data-hand-color="2"
-											data-hand-block-id="compatible_collaborators"
-											class="hand hand--5"></div>
+											class="clock-labels">
+											<div
+												data-hand-label
+												data-hand-index-id="1"
+												data-hand-label-id="proof_of_impact"
+												class="clock-label clock-label--1">Proof of Impact</div>
+											<div
+												data-hand-label
+												data-hand-index-id="2"
+												data-hand-label-id="equity_centered_practices"
+												class="clock-label clock-label--2">Equity-Centered Practices</div>
+											<div
+												data-hand-label
+												data-hand-index-id="3"
+												data-hand-label-id="community_connection"
+												class="clock-label clock-label--3">Community Connection</div>
+											<div
+												data-hand-label
+												data-hand-index-id="4"
+												data-hand-label-id="supportive_guides"
+												class="clock-label clock-label--4">Supportive Guides</div>
+											<div
+												data-hand-label
+												data-hand-index-id="5"
+												data-hand-label-id="compatible_collaborators"
+												class="clock-label clock-label--5">Compatible Collaborators</div>
+											<div
+												data-hand-label
+												data-hand-index-id="6"
+												data-hand-label-id="public_presence"
+												class="clock-label clock-label--6">Public Presence</div>
+											<div
+												data-hand-label
+												data-hand-index-id="7"
+												data-hand-label-id="operating_infrastructure"
+												class="clock-label clock-label--7">Operating Infrastructure</div>
+											<div
+												data-hand-label
+												data-hand-index-id="8"
+												data-hand-label-id="leadership_capacity"
+												class="clock-label clock-label--8">Effective Leadership</div>
+											<div
+												data-hand-label
+												data-hand-index-id="9"
+												data-hand-label-id="startup_tactics"
+												class="clock-label clock-label--9">Startup Tactics</div>
+											<div
+												data-hand-label
+												data-hand-index-id="10"
+												data-hand-label-id="sustainable_funding"
+												class="clock-label clock-label--10">Sustainable Funding</div>
+											<div
+												data-hand-label
+												data-hand-index-id="11"
+												data-hand-label-id="foundational_vision"
+												class="clock-label clock-label--11">Foundational Vision</div>
+											<div
+												data-hand-label
+												data-hand-index-id="0"
+												data-hand-label-id="signature_strength"
+												class="clock-label clock-label--12">Signature Strength</div>
+										</div>
 										<div
-											data-hand
-											data-hand-reach="6"
-											data-hand-color="2"
-											data-hand-block-id="public_presence"
-											class="hand hand--6"></div>
-										<div
-											data-hand
-											data-hand-reach="7"
-											data-hand-color="3"
-											data-hand-block-id="operating_infrastructure"
-											class="hand hand--7"></div>
-										<div
-											data-hand
-											data-hand-reach="8"
-											data-hand-color="3"
-											data-hand-block-id="leadership_capacity"
-											class="hand hand--8"></div>
-										<div
-											data-hand
-											data-hand-reach="9"
-											data-hand-color="3"
-											data-hand-block-id="startup_tactics"
-											class="hand hand--9"></div>
-										<div
-											data-hand
-											data-hand-reach="10"
-											data-hand-color="3"
-											data-hand-block-id="sustainable_funding"
-											class="hand hand--10"></div>
-										<div
-											data-hand
-											data-hand-reach="11"
-											data-hand-color="1"
-											data-hand-block-id="foundational_vision"
-											class="hand hand--11"></div>
-										<div
-											data-hand
-											data-hand-reach="12"
-											data-hand-color="1"
-											data-hand-block-id="signature_strength"
-											class="hand hand--12"></div>
+											class="middle-cap"></div>
 									</div>
-									<div
-										class="clock-labels">
-										<div
-											data-hand-label
-											data-hand-index-id="1"
-											data-hand-label-id="proof_of_impact"
-											class="clock-label clock-label--1">Proof of Impact</div>
-										<div
-											data-hand-label
-											data-hand-index-id="2"
-											data-hand-label-id="equity_centered_practices"
-											class="clock-label clock-label--2">Equity Centered Process</div>
-										<div
-											data-hand-label
-											data-hand-index-id="3"
-											data-hand-label-id="community_connection"
-											class="clock-label clock-label--3">Community Connection</div>
-										<div
-											data-hand-label
-											data-hand-index-id="4"
-											data-hand-label-id="supportive_guides"
-											class="clock-label clock-label--4">Supportive Guides</div>
-										<div
-											data-hand-label
-											data-hand-index-id="5"
-											data-hand-label-id="compatible_collaborators"
-											class="clock-label clock-label--5">Compatible Collaborators</div>
-										<div
-											data-hand-label
-											data-hand-index-id="6"
-											data-hand-label-id="public_presence"
-											class="clock-label clock-label--6">Public Presence</div>
-										<div
-											data-hand-label
-											data-hand-index-id="7"
-											data-hand-label-id="operating_infrastructure"
-											class="clock-label clock-label--7">Operating Infrastructure</div>
-										<div
-											data-hand-label
-											data-hand-index-id="8"
-											data-hand-label-id="leadership_capacity"
-											class="clock-label clock-label--8">Effective Leadership</div>
-										<div
-											data-hand-label
-											data-hand-index-id="9"
-											data-hand-label-id="startup_tactics"
-											class="clock-label clock-label--9">Startup Tactics</div>
-										<div
-											data-hand-label
-											data-hand-index-id="10"
-											data-hand-label-id="sustainable_funding"
-											class="clock-label clock-label--10">Sustainable Funding</div>
-										<div
-											data-hand-label
-											data-hand-index-id="11"
-											data-hand-label-id="foundational_vision"
-											class="clock-label clock-label--11">Foundational Vision</div>
-										<div
-											data-hand-label
-											data-hand-index-id="0"
-											data-hand-label-id="signature_strength"
-											class="clock-label clock-label--12">Signature Strength</div>
-									</div>
-									<div
-										class="middle-cap"></div>
 								</div>
 							</div>
-						</div>
-						<div
-							class="results-summary">
 							<div
-								data-slideshow>
+								class="results-summary">
 								<div
-									data-slides>
+									data-slideshow>
 									<div
-										data-slide-intro>
-										<h2>Your Innovator Quiz Results</h2>
-										<p>This chart visually represents your strengths and growth areas across the twelve building blocks, enabling easy comparison between nodes. This snapshot offers an at-a-glance view to identify patterns and gaps in your innovation journey.</p>
-										<p>Select points on the chart to learn more about your results or the innovation building blocks.</p>
+										data-slides
+										class="results-summary__slides">
+										<div
+											data-slide-intro>
+											<h2>Your Innovator Quiz Results</h2>
+											<p>This chart visually represents your strengths and growth areas across the twelve building blocks, enabling easy comparison between nodes. This snapshot offers an at-a-glance view to identify patterns and gaps in your innovation journey.</p>
+											<p>Your chart results are based on your quiz results and the importance assigned by a cohort of co-creators.</p>
+											<p>Make a selection on the chart or use the arrows below to the right to learn more about each building block.</p>
+										</div>
+										<div
+											data-slide-single
+											class="hidden">
+											<div
+												data-slide-eyebrow
+												class="eyebrow">Impact</div>
+											<h2
+												data-slide-title>Signature Strength</h2>
+											<p
+												data-slide-body>Define your unique combination of skills, insights, and approaches that gives you a competitive edge.</p>
+											<p>    You are at a
+												<strong>
+													<span
+														data-slide-priority></span>
+												</strong>
+												 level for this building block.  </p>
+<p>     View Curated Practices below to review Practices recommended by innovators and advisors for people with quiz results like yours. Or View All Practices below to review all practices related to your results.
+
+											</p>
+										</div>
 									</div>
 									<div
-										data-slide-single
-										class="hidden">
-										<div
-											data-slide-eyebrow
-											class="eyebrow">Impact</div>
-										<h2
-											data-slide-title>Signature Strength</h2>
-										<p
-											data-slide-body>Define your unique combination of skills, insights, and approaches that gives you a competitive edge.</p>
-										<p>
-											Your responses suggest that completing signature strength activities is a
-											<span
-												data-slide-priority></span>
-											priority right now.
-										</p>
+										data-slideshow-buttons
+										class="results-summary__buttons">
+										<button
+											data-prev-block-button
+											class="button w-inline-block">
+											<div
+												class="button__arrow-left"></div>
+										</button>
+										<button
+											data-next-block-button
+											class="button w-inline-block">
+											<div
+												class="button__arrow-right"></div>
+										</button>
 									</div>
-								</div>
-								<div
-									data-slideshow-buttons>
-									<button
-										data-prev-block-button
-										class="button w-inline-block">
-										<div
-											class="button__arrow-left"></div>
-									</button>
-									<button
-										data-next-block-button
-										class="button w-inline-block">
-										<div
-											class="button__arrow-right"></div>
-									</button>
 								</div>
 							</div>
-						</div>
-						<div
-							class="results-share">
-							<button
-								data-share-button
-								class="button w-inline-block">
-								<div
-									class="button__share"></div>
-							</button>
+							<div
+								class="results-share">
+								<button
+									data-share-button
+									class="button w-inline-block">
+									<div
+										class="button__share"></div>
+								</button>
+							</div>
 						</div>
 					</div>
+				</div>
 
-					<!-- Results page: Tabs -->
+				<!-- Results page: Tabs -->
+				<div
+					class="quiz__results-tabs-wrap">
 					<div
 						class="quiz__results-tabs">
 						<nav>
@@ -499,22 +529,26 @@
 								<li>
 									<button
 										data-tab="curated"
-										class="tab tab--curated tab--is-active">View Curated Activities</button>
+										class="tab tab--curated tab--is-active">View Curated Practices</button>
 								</li>
 								<li>
 									<button
 										data-tab="all"
-										class="tab tab--all">View All Activities</button>
+										class="tab tab--all">View All Practices</button>
 								</li>
 							</ul>
 						</nav>
 					</div>
+				</div>
 
+				<!-- Results page: Tabs Panels -->
+				<div
+					class="quiz__results-tab-panels">
 					<div
-						class="quiz__results-tab-panels">
+						data-tab-panel="curated"
+						class="tab-panel tab-panel--curated tab-panel--is-active">
 						<div
-							data-tab-panel="curated"
-							class="tab-panel tab-panel--curated tab-panel--is-active">
+							class="quiz__results-filters-activities-wrap">
 							<!-- Results page: Filters & Activities - Curated -->
 							<div
 								class="quiz__results-filters-activities">
@@ -527,7 +561,7 @@
 											data-toggle="priority"
 											class="toggle">
 											<div
-												class="filter-group__title">Filter by Priority</div>
+												class="filter-group__title">Filter practices by innovator recommendation</div>
 											<div
 												class="toggle__indicator"></div>
 										</button>
@@ -548,7 +582,7 @@
 															checked
 															data-filter-curated/>
 														<label
-															for="high">High Priority</label>
+															for="high">High Recommendation</label>
 													</div>
 													<div
 														class="checkbox">
@@ -560,7 +594,7 @@
 															checked
 															data-filter-curated/>
 														<label
-															for="medium">Medium Priority</label>
+															for="medium">Medium Recommendation</label>
 													</div>
 													<div
 														class="checkbox">
@@ -572,7 +606,7 @@
 															checked
 															data-filter-curated/>
 														<label
-															for="low">Low Priority</label>
+															for="low">Low Recommendation</label>
 													</div>
 												</div>
 												<div
@@ -586,7 +620,7 @@
 											data-toggle="category"
 											class="toggle">
 											<div
-												class="filter-group__title">Filter by Category</div>
+												class="filter-group__title">Filter by building block</div>
 											<div
 												class="toggle__indicator"></div>
 										</button>
@@ -645,7 +679,7 @@
 															checked
 															data-filter-curated/>
 														<label
-															for="equity_centered_practices_curated">Equity Centered Process</label>
+															for="equity_centered_practices_curated">Equity-Centered Approaches</label>
 													</div>
 													<div
 														class="options__title text-green">Community Building</div>
@@ -763,9 +797,12 @@
 								</div>
 							</div>
 						</div>
+					</div>
+					<div
+						data-tab-panel="all"
+						class="tab-panel tab-panel--all">
 						<div
-							data-tab-panel="all"
-							class="tab-panel tab-panel--all">
+							class="quiz__results-filters-activities-wrap">
 							<!-- Results page: Filters & Activities - Curated -->
 							<div
 								class="quiz__results-filters-activities">
@@ -775,15 +812,15 @@
 									<div
 										class="filter-group">
 										<button
-											data-toggle="priority"
+											data-toggle="preparedness"
 											class="toggle">
 											<div
-												class="filter-group__title">Filter by Preparedness Score</div>
+												class="filter-group__title">Filter by preparedness score</div>
 											<div
 												class="toggle__indicator"></div>
 										</button>
 										<div
-											data-toggle-target="priority"
+											data-toggle-target="preparedness"
 											class="toggle__target">
 											<div
 												class="filter-group__options">
@@ -842,7 +879,7 @@
 														<input
 															type="checkbox"
 															id="extremely_prepared"
-															name="priority"
+															name="preparedness"
 															value="extremely_prepared"
 															checked
 															data-filter-all/>
@@ -861,7 +898,7 @@
 											data-toggle="category"
 											class="toggle">
 											<div
-												class="filter-group__title">Filter by Category</div>
+												class="filter-group__title">Filter by building block</div>
 											<div
 												class="toggle__indicator"></div>
 										</button>
@@ -920,7 +957,7 @@
 															checked
 															data-filter-all/>
 														<label
-															for="equity_centered_practices_all">Equity Centered Process</label>
+															for="equity_centered_practices_all">Equity-Centered Approaches</label>
 													</div>
 													<div
 														class="options__title text-green">Community Building</div>
@@ -1040,6 +1077,7 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>

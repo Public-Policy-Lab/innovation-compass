@@ -111,7 +111,6 @@ const quizApp = {
 		// Buttons
 		this.hooks.buttons = {
 			start: document.querySelector("[data-start-button]"),
-			finish: document.querySelector("[data-finish-button]"),
 			nextFrame: document.querySelectorAll("[data-next-frame-button]"),
 			prevFrame: document.querySelectorAll("[data-prev-frame-button]"),
 			nextBlock: document.querySelector("[data-next-block-button]"),
@@ -121,9 +120,6 @@ const quizApp = {
 
 		this.hooks.buttons.start.addEventListener("click", () => {
 			this.startQuiz();
-		});
-		this.hooks.buttons.finish.addEventListener("click", () => {
-			this.skipToResults();
 		});
 		this.hooks.buttons.nextFrame.forEach((item) => {
 			item.addEventListener("click", () => {
@@ -225,6 +221,9 @@ const quizApp = {
 				this.currentFrame++;
 				this.renderFrame();
 			} else {
+				document.querySelectorAll("[data-answer]").forEach((answer) => {
+					answer.classList.add("has--error");
+				});
 				this.hooks.errorMessage.classList.remove("hidden");
 			}
 		} else {
@@ -330,6 +329,10 @@ const quizApp = {
 	},
 
 	renderFrame: function () {
+		// Remove error classes
+		document.querySelectorAll("[data-answer]").forEach((answer) => {
+			answer.classList.remove("has--error");
+		});
 		// Hide error message
 		this.hooks.errorMessage.classList.add("hidden");
 
@@ -453,12 +456,13 @@ const quizApp = {
 		});
 
 		// Loop through the blocks and render the results
+		const numBlocks = Object.keys(this.blocks).length;
 		for (let block in this.blocks) {
 			const hand = document.querySelector("[data-hand-block-id='" + block + "']");
 			const average = this.blocks[block].average;
 
 			if (hand && average) {
-				hand.setAttribute("data-hand-reach", average);
+				hand.setAttribute("data-hand-reach", numBlocks - average);
 			}
 		}
 
@@ -845,8 +849,8 @@ const quizApp = {
 		} else {
 			// replace underscores with spaces
 			preparedness = activity.preparedness.replace(/_/g, " ");
-			var headline = "You indicated that you are <strong>" + preparedness + "</strong> for the following activities";
-			var tooltip = "The following activities are organized by your preparedness level based on your quiz results.";
+			var headline = "You indicated that you are <strong>" + preparedness + "</strong> for the following practices";
+			var tooltip = "The following practices are organized by your preparedness level based on your quiz results.";
 			var activity_group_id = activity.preparedness;
 		}
 

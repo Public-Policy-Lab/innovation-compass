@@ -9,6 +9,7 @@
 	display: inline-block;
 	width: 10px;
 	height: 10px;
+	margin-left: 6px;
 	background-image: url("../images/icons/info.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -17,7 +18,7 @@
 
 .tooltip__anchor {
 	position: absolute;
-	bottom: 0;
+	bottom: 4px;
 	right: 0;
 }
 
