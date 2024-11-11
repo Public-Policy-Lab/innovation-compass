@@ -464,8 +464,8 @@ const quizApp = {
 			const hand = document.querySelector("[data-hand-block-id='" + block + "']");
 			const average = this.blocks[block].average;
 
-			if (hand && average) {
-				hand.setAttribute("data-hand-reach", numBlocks - average);
+			if (hand) {
+				hand.setAttribute("data-hand-reach", Math.round(12 - ((12 / 13) * average * 3)));
 			}
 		}
 
