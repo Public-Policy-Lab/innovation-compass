@@ -7,6 +7,11 @@ const participantGateway = {
 		prefix: "ic",
 	},
 	init: function () {
+		// if the URL contains "#r="
+		if (window.location.hash.includes("#r=")) {
+			return;
+		}
+
 		// check if user has already seen the modal
 		const alreadySeen = participantGateway.checkCookie("participant_id");
 		if (alreadySeen) {
