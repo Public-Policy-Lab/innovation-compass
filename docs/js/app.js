@@ -693,6 +693,8 @@ const quizApp = {
 			}
 		});
 
+		console.log(this.quiz);
+
 		this.activities.sort(this.prioritySort);
 
 		// Build activity groups
@@ -715,9 +717,7 @@ const quizApp = {
 
 			previous = activity;
 		});
-
 		this.activities.sort(this.preparednessSort);
-
 		html = "";
 		previous = {
 			priority: 0,
@@ -762,10 +762,10 @@ const quizApp = {
 		return 0;
 	},
 
-	getPriority: function (average) {
-		if (average <= 3) {
+	getPriority: function (score) {
+		if (score <= 1) {
 			return "low";
-		} else if (average <= 7) {
+		} else if (score <= 3) {
 			return "medium";
 		} else {
 			return "high";
