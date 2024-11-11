@@ -61,7 +61,7 @@ const quizApp = {
 		});
 
 		if (token) {
-			this.finishQuiz();
+			this.doCalculations();
 		}
 	},
 
