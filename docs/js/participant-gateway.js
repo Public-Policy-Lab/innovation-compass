@@ -29,7 +29,7 @@ const participantGateway = {
             <div style="">
               <h1 style="font-family: 'GT Planar'; font-size: 24px; font-weight: 500; line-height: 30px; color: #042159; margin: 0 0 24px 0;">The content and format of this site are in development.</h1>
               <label for="participant-gateway" style="font-family: 'GT Planar'; font-size: 18px; font-weight: 300; line-height: 22px; color: #042159; margin: 0 0 15px 0;">
-                We are using participant IDs to track usage of this site py pilot participants.
+                We are using participant IDs to track usage of this site by pilot participants.
               </label>
               <input 
                 class="text-field w-input" 
@@ -54,8 +54,7 @@ const participantGateway = {
       </div>
     `;
 
-		// append modal to body
-		document.body.appendChild(modal);
+		this.openModal(modal);
 
 		// get modal element
 		const modalEl = document.getElementById("participantGatewayModal");
@@ -90,8 +89,8 @@ const participantGateway = {
 		noIdLink.addEventListener("click", function () {
 			// remove cookie
 			participantGateway.setCookie("participant_id", "guest");
-			// remove modal
-			modalEl.remove();
+			// close modal
+			participantGateway.closeModal(modalEl);
 		});
 
 		// add event listener to submit button
@@ -103,8 +102,8 @@ const participantGateway = {
 				const participant_id = inputVal[1];
 				// set cookie
 				participantGateway.setCookie("participant_id", participant_id);
-				// remove modal
-				modalEl.remove();
+				// close modal
+				participantGateway.closeModal(modalEl);
 			} else {
 				// clear input value
 				input.value = "";
@@ -136,5 +135,21 @@ const participantGateway = {
 		const value = `; ${document.cookie}`;
 		const parts = value.split(`; ${name}=`);
 		if (parts.length === 2) return parts.pop().split(";").shift();
+	},
+
+	openModal: function (modal) {
+		// append modal to body
+		document.body.appendChild(modal);
+
+		// Prevent scrolling on the body when the modal is open
+		document.body.style.overflow = "hidden";
+	},
+
+	closeModal: function (modal) {
+		// remove modal from body
+		modal.remove();
+
+		// Allow scrolling on the body when the modal is closed
+		document.body.style.overflow = "";
 	},
 };
