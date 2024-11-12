@@ -47,6 +47,8 @@ const quizApp = {
 			return;
 		}
 
+		this.participantId = this.getQueryVariable("pid");
+
 		var answers = token.split(".");
 		var answers_array = [];
 		for (var i = 0; i < answers.length; i++) {
