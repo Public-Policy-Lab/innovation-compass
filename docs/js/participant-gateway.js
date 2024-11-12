@@ -43,8 +43,10 @@ const participantGateway = {
               <div data-error-message style="display: none;">
                 <div style="margin-top: 10px; font-family: 'GT Planar'; font-size: 12px; font-weight: 300; line-height: 13.8px; letter-spacing: 0.05em; color: #C4291C;">Please enter a valid ID to enter with participant ID</div>
               </div>
-              <div data-no-id-link class="" style="cursor: pointer; margin-top: 80px; height: 44px; display: flex; align-items: center; border-top: 2px dotted;">
-                <p style="margin-top: 12px; font-family: 'GT Planar'; font-size: 18px; font-weight: 300; line-height: 20.7px; text-decoration: underline;">I don't have a Participant ID</p>
+              <div class="" style="margin-top: 80px; border-top: 2px dotted;">
+                <div data-no-id-link class="" style="cursor: pointer; height: 44px; display: inline-flex; align-items: center;">
+                	<p style="margin-top: 12px; font-family: 'GT Planar'; font-size: 18px; font-weight: 300; line-height: 20.7px; text-decoration: underline;">I don't have a Participant ID</p>
+              	</div>
               </div>
             </div>
           </div>

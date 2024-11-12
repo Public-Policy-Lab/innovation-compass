@@ -47,6 +47,8 @@ const quizApp = {
 			return;
 		}
 
+		this.participantId = this.getQueryVariable("pid");
+
 		var answers = token.split(".");
 		var answers_array = [];
 		for (var i = 0; i < answers.length; i++) {
@@ -275,6 +277,9 @@ const quizApp = {
 		// Add the header row
 		let headerRow = ["GID"];
 
+		// Add PID to the header row
+		headerRow.push("PID");
+
 		// Add datetime to the header row
 		headerRow.push("datetime");
 
@@ -293,6 +298,9 @@ const quizApp = {
 
 		// Add the GID to the data row
 		dataRow.push(this.gid);
+
+		// Add the PID to the data row
+		dataRow.push(this.participantId);
 
 		// Add the datetime to the data row
 		dataRow.push(this.currentDateTime);
@@ -465,7 +473,7 @@ const quizApp = {
 			const average = this.blocks[block].average;
 
 			if (hand) {
-				hand.setAttribute("data-hand-reach", Math.round(.9 * average * 3) + 1);
+				hand.setAttribute("data-hand-reach", Math.round(0.9 * average * 3) + 1);
 			}
 		}
 
