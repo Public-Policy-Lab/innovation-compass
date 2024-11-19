@@ -1,10 +1,14 @@
+var leaveCheck = true;
+
 document.addEventListener("DOMContentLoaded", function () {
 	quizApp.init();
 	window.addEventListener("beforeunload", (event) => {
-		// Cancel the event as stated by the standard.
-		event.preventDefault();
-		// Chrome requires returnValue to be set.
-		event.returnValue = "";
+		if (leaveCheck) {
+			// Cancel the event as stated by the standard.
+			event.preventDefault();
+			// Chrome requires returnValue to be set.
+			event.returnValue = "";
+		}
 	});
 });
 
