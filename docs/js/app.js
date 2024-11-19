@@ -861,7 +861,7 @@ const quizApp = {
 								target="_blank"
 								class="button w-inline-block">
 								<div
-									class="button-text">Go To Activity</div>
+									class="button-text">Go To Practice</div>
 							</a>
 						</div>
 					</div>
