@@ -102,7 +102,7 @@ const participantGateway = {
 			const inputVal = input.value.split("-");
 
 			// check if input value is correct
-			if (inputVal.length == 2 && inputVal[0] === participantGateway.config.prefix && !isNaN(inputVal[1])) {
+			if (inputVal.length == 2 && inputVal[0] === participantGateway.config.prefix && !isNaN(inputVal[1]) && inputVal[1].length === 4) {
 				const participant_id = inputVal[1];
 				// set cookie
 				participantGateway.setCookie("participant_id", participant_id);
