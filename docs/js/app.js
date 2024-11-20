@@ -471,13 +471,13 @@ const quizApp = {
 		});
 
 		// Loop through the blocks and render the results
-		const numBlocks = Object.keys(this.blocks).length;
 		for (let block in this.blocks) {
 			const hand = document.querySelector("[data-hand-block-id='" + block + "']");
 			const average = this.blocks[block].average;
+			const reach = Math.floor(this.scaleValue(average, 0, 12, 1, 12));
 
 			if (hand) {
-				hand.setAttribute("data-hand-reach", Math.round(0.9 * average * 3) + 1);
+				hand.setAttribute("data-hand-reach", reach);
 			}
 		}
 
@@ -705,8 +705,6 @@ const quizApp = {
 				this.activities.push(item);
 			}
 		});
-
-		console.log(this.quiz);
 
 		this.activities.sort(this.prioritySort);
 
@@ -1080,8 +1078,6 @@ const quizApp = {
 			return;
 		}
 
-		console.log("Triggering GA event", category, action, label);
-
 		gtag("event", action, {
 			event_category: category,
 			event_label: label,
@@ -1093,6 +1089,10 @@ const quizApp = {
 		const value = `; ${document.cookie}`;
 		const parts = value.split(`; ${name}=`);
 		if (parts.length === 2) return parts.pop().split(";").shift();
+	},
+
+	scaleValue: function (value, oldMin, oldMax, newMin, newMax) {
+		return ((value - oldMin) / (oldMax - oldMin)) * (newMax - newMin) + newMin;
 	},
 };
 
