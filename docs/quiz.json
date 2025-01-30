@@ -212,16 +212,6 @@
     {
         "category": "entrepreneurship",
         "building_block": "operating_infrastructure",
-        "activity_name": "Create a Company Wellbeing Strategy",
-        "answer": null,
-        "weighting": 1,
-        "blurb": "Practicing wellbeing proactively at work is essential to running a sustainable business.",
-        "activity_description": "Practicing wellbeing proactively at work is essential to running a sustainable business.",
-        "activity_url": "https://www.innovationcompass.io/activities/create-a-company-wellbeing-strategy"
-    },
-    {
-        "category": "entrepreneurship",
-        "building_block": "operating_infrastructure",
         "activity_name": "Develop a Summary of Your Revenue, Costs, and Expenses",
         "answer": null,
         "weighting": 1,
@@ -411,7 +401,7 @@
     },
     {
         "category": "impact",
-        "building_block": "equity_centered_practices",
+        "building_block": "organizational_culture",
         "activity_name": "Identify the Core Values That Drive Your Work",
         "answer": null,
         "weighting": 1,
@@ -421,12 +411,22 @@
     },
     {
         "category": "impact",
-        "building_block": "equity_centered_practices",
+        "building_block": "organizational_culture",
         "activity_name": "Set up Internal Systems for Collaboration",
         "answer": null,
         "weighting": 1,
         "blurb": "Creating streamlined collaboration systems is vital for launching and scaling your business, as these systems promote transparency and ensure that your team knows where, when, and how they can work together towards shared goals - ultimately boosting their productivity.",
         "activity_description": "Creating streamlined collaboration systems is vital for launching and scaling your business, as these systems promote transparency and ensure that your team knows where, when, and how they can work together towards shared goals - ultimately boosting their productivity.",
         "activity_url": "https://www.innovationcompass.io/activities/set-up-internal-systems-for-collaboration"
+    },
+    {
+        "category": "impact",
+        "building_block": "organizational_culture",
+        "activity_name": "Create a Company Wellbeing Strategy",
+        "answer": null,
+        "weighting": 1,
+        "blurb": "Practicing wellbeing proactively at work is essential to running a sustainable business.",
+        "activity_description": "Practicing wellbeing proactively at work is essential to running a sustainable business.",
+        "activity_url": "https://www.innovationcompass.io/activities/create-a-company-wellbeing-strategy"
     }
 ]
