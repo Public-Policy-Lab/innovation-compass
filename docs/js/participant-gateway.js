@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-	participantGateway.init();
+	//participantGateway.init();
 });
 
 const participantGateway = {
