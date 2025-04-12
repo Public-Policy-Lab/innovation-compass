@@ -1,0 +1,24 @@
+.level {
+	width: 83px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.level--inline {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.level--high {
+	background-image: url("../images/levels/high.svg");
+}
+
+.level--medium {
+	background-image: url("../images/levels/medium.svg");
+}
+
+.level--low {
+	background-image: url("../images/levels/low.svg");
+}

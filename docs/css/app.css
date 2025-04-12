@@ -4,6 +4,8 @@
 @import url("text-colors.css");
 @import url("tooltips.css");
 @import url("legacy-rules.css");
+@import url("buttons.css");
+@import url("levels.css");
 
 /**
  * Quiz 
@@ -297,14 +299,19 @@
 .quiz__results-graphic-summary {
 	position: relative;
 	margin: 20px 0;
-	padding: 16px;
 	overflow: hidden;
 	border: 1px solid var(--color-navy);
+	border-radius: 7px;
+}
+
+.results-graph {
+	margin: 20px 0;
 }
 
 .results-summary {
+	display: flex;
+	flex-direction: column;
 	margin: 20px 0 0 0;
-	max-width: 266px;
 }
 
 .results-summary .eyebrow {
@@ -313,14 +320,15 @@
 	line-height: 13.73px;
 	letter-spacing: 0.07em;
 	text-transform: uppercase;
-	color: var(--color-purple);
+	margin-bottom: 6px;
 }
 
 .results-summary h2 {
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 25.2px;
+	font-size: 28px;
+	font-weight: 300;
+	line-height: 1;
 	margin-top: 0;
+	margin-bottom: 40px;
 }
 
 .results-summary p {
@@ -329,62 +337,16 @@
 	line-height: 19.6px;
 }
 
-.results-summary .results-summary__slides {
-	padding-bottom: 10px;
-}
-
-.button {
-	font-family: "GT Alpina Typewriter";
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 16.02px;
-}
-
-.button:hover,
-.button:focus {
-	background-color: var(--color-navy-light);
-}
-
-.button .button__arrow-left {
-	width: 12px;
-	height: 20px;
-	background-image: url("../images/icons/arrow-left.svg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-}
-
-.button .button__arrow-right {
-	width: 12px;
-	height: 20px;
-	background-image: url("../images/icons/arrow-right.svg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-}
-
-.results-summary .button {
-	border: none;
-}
-
-.results-share {
-	position: absolute;
-	top: 0;
-	right: 0;
+.results-summary__buttons {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
 	padding: 16px;
 }
 
-.results-share .button {
-	border: none;
-}
-
-.results-share .button .button__share {
-	width: 16px;
-	height: 22px;
-	background-image: url("../images/icons/share.svg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
+.results-summary__slideshow {
+	background-color: var(--color-navy-light);
+	padding: 16px;
 }
 
 .quiz__results-tabs-wrap {
@@ -717,21 +679,24 @@
 	}
 
 	.quiz__results-graphic-summary {
-		grid-column: span 12;
+		grid-column: span 24;
 		display: grid;
-		grid-template-columns: repeat(12, 1fr);
-		gap: 24px;
+		grid-template-columns: repeat(24, 1fr);
+		gap: 0;
 		margin: 40px 0 20px 0;
 	}
 
 	.results-graph {
-		grid-column: span 5 / 11;
+		grid-column: span 8 / 20;
 		order: 2;
 	}
 
 	.results-summary {
-		grid-column: span 3;
+		grid-column: span 7;
 		margin: 0;
+		flex-direction: column-reverse;
+		justify-content: space-between;
+		background-color: var(--color-navy-light);
 	}
 
 	.results-share {
@@ -795,12 +760,8 @@
 
 @media screen and (min-width: 1280px) {
 	.results-graph {
-		grid-column: span 6 / 12;
+		grid-column: span 15 / 24;
 		order: 2;
-	}
-
-	.results-summary {
-		grid-column: span 4;
 	}
 
 	.quiz__activities .button-text {

@@ -689,7 +689,6 @@ const quizApp = {
 				total += item.priority;
 			});
 			this.blocks[block].average = total / this.blocks[block].items.length;
-
 			// Round
 			this.blocks[block].average = Math.round(this.blocks[block].average);
 		}
