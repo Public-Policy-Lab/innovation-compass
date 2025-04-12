@@ -1,4 +1,4 @@
-var leaveCheck = true;
+var leaveCheck = false;
 
 document.addEventListener("DOMContentLoaded", function () {
 	quizApp.init();
@@ -170,6 +170,18 @@ const quizApp = {
 
 		// Errors
 		this.hooks.errorMessage = document.querySelector("[data-error-message]");
+
+		// For keys 1-5, add an event listener that will select the answer
+		for (let i = 1; i <= 5; i++) {
+			document.addEventListener("keydown", function (event) {
+				if (event.key === i.toString()) {
+					const question = document.querySelector(`[data-answer-${i - 1}]`);
+					if (question) {
+						question.checked = true;
+					}
+				}
+			});
+		}
 
 		// Secret keyboard shortcut: Shift + C
 		document.addEventListener("keydown", function (event) {
