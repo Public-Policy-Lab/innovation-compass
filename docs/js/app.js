@@ -107,6 +107,7 @@ const quizApp = {
 				eyebrow: document.querySelector("[data-slide-eyebrow]"),
 				title: document.querySelector("[data-slide-title]"),
 				body: document.querySelector("[data-slide-body]"),
+				practices: document.querySelector("[data-slide-practices]"),
 				priority: document.querySelector("[data-slide-priority]"),
 			},
 			activities: {
@@ -122,6 +123,7 @@ const quizApp = {
 			prevFrame: document.querySelectorAll("[data-prev-frame-button]"),
 			nextBlock: document.querySelector("[data-next-block-button]"),
 			prevBlock: document.querySelector("[data-prev-block-button]"),
+			info: document.querySelector("[data-info-button]"),
 			share: document.querySelector("[data-share-button]"),
 		};
 
@@ -143,6 +145,9 @@ const quizApp = {
 		});
 		this.hooks.buttons.prevBlock.addEventListener("click", () => {
 			this.prevBlock();
+		});
+		this.hooks.buttons.info.addEventListener("click", () => {
+			this.showIntroSlide();
 		});
 		this.hooks.buttons.share.addEventListener("click", () => {
 			this.copyShareUrl();
@@ -211,6 +216,11 @@ const quizApp = {
 
 		// Scroll to top
 		window.scrollTo(0, 0);
+	},
+
+	showIntroSlide: function () {
+		this.currentBlock = 0;
+		this.renderBlock();
 	},
 
 	prevFrame: function () {
@@ -506,6 +516,7 @@ const quizApp = {
 
 	renderBlock: function () {
 		if (this.currentBlock == 0) {
+			this.hideElement(this.hooks.buttons.info);
 			this.hideElement(this.hooks.templates.slide.single);
 			this.showElement(this.hooks.templates.slide.intro);
 			this.hooks.hands.forEach((hand) => {
@@ -515,12 +526,62 @@ const quizApp = {
 				hand_label.classList.remove("is--focused");
 			});
 		} else {
+			this.showElement(this.hooks.buttons.info);
 			this.hideElement(this.hooks.templates.slide.intro);
 			this.showElement(this.hooks.templates.slide.single);
 
-			var actualIndex = this.currentBlock - 1;
 			// Get the current block
+			const actualIndex = this.currentBlock - 1;
 			const block = this.blocks[this.blockKeys[actualIndex]];
+
+			// Get the practices
+			const practices = this.blocks[this.blockKeys[actualIndex]].items;
+			let practicesHtml = "";
+			practices.forEach((practice) => {
+				practicesHtml += `<li><a href="${practice.activity_url}" target="_blank">${practice.activity_name}</a></li>`;
+			});
+
+			// Output the practices
+			this.hooks.templates.slide.practices.innerHTML = practicesHtml;
+
+			// Output eyebrow
+			this.hooks.templates.slide.eyebrow.innerHTML = block.category;
+
+			// Remove any existing text-color classes
+			this.hooks.templates.slide.eyebrow.classList.remove("text-purple", "text-green", "text-orange");
+
+			// Set the text-color class based on category
+			switch (block.category) {
+				case "Impact":
+					this.hooks.templates.slide.eyebrow.classList.add("text-purple");
+					break;
+				case "Community":
+					this.hooks.templates.slide.eyebrow.classList.add("text-green");
+					break;
+				case "Entrepreneurship":
+					this.hooks.templates.slide.eyebrow.classList.add("text-orange");
+					break;
+			}
+
+			// Output title, body
+			this.hooks.templates.slide.title.innerHTML = block.title;
+			this.hooks.templates.slide.body.innerHTML = block.description;
+
+			// Output the priority
+			switch (block.priority) {
+				case "low":
+					this.hooks.templates.slide.priority.innerHTML = `<span class="level level--inline level--low"></span>`;
+					break;
+				case "medium":
+					this.hooks.templates.slide.priority.innerHTML = `<span class="level level--inline level--medium"></span>`;
+					break;
+				case "high":
+					this.hooks.templates.slide.priority.innerHTML = `<span class="level level--inline level--high"></span>`;
+					break;
+				default:
+					this.hooks.templates.slide.priority.innerHTML = `<span class="level level--inline level--unknown"></span>`;
+					break;
+			}
 
 			// Set the relevant hand to be focused
 			this.hooks.hands.forEach((hand) => {
@@ -540,12 +601,6 @@ const quizApp = {
 					hand_label.classList.add("is--focused");
 				}
 			});
-
-			// Output data to block
-			this.hooks.templates.slide.eyebrow.innerHTML = block.category;
-			this.hooks.templates.slide.title.innerHTML = block.title;
-			this.hooks.templates.slide.body.innerHTML = block.description;
-			this.hooks.templates.slide.priority.innerHTML = block.priority;
 		}
 	},
 

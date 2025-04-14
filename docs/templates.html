@@ -171,7 +171,7 @@
 					<div class="quiz__body">
 						<!-- Results page: Graphic & Summary -->
 						<div class="quiz__results-graphic-summary">
-							<div class="results-graph">
+							<div class="results-graphic">
 								<div class="clock-container">
 									<div class="clock">
 										<div class="ring ring--1"></div>
@@ -211,7 +211,7 @@
 							</div>
 							<div class="results-summary">
 								<div class="results-summary__buttons">
-									<div data-slideshow-buttons>
+									<div data-slideshow-buttons class="button-set">
 										<button data-prev-block-button class="button w-inline-block">
 											<div class="button__arrow-left"></div>
 										</button>
@@ -219,8 +219,11 @@
 											<div class="button__arrow-right"></div>
 										</button>
 									</div>
-									<div class="">
-										<button data-share-button class="button w-inline-block">
+									<div data-misc-controls class="button-set">
+										<button data-info-button class="hidden button button--small button--bg-transparent button-border-none w-inline-block">
+											<div class="button__question-mark"></div>
+										</button>
+										<button data-share-button class="button button--small button--bg-transparent button-border-none w-inline-block">
 											<div class="button__share"></div>
 										</button>
 									</div>
@@ -240,17 +243,18 @@
 											<p>View your results by making selection on the chart by clicking a label or spoke, or click begin and then use the arrows to navigate.</p>
 										</div>
 										<div data-slide-single class="hidden">
-											<div data-slide-eyebrow class="eyebrow">Impact</div>
-											<h2 data-slide-title>Signature Strength</h2>
-											<p data-slide-body>Define your unique combination of skills, insights, and approaches that gives you a competitive edge.</p>
+											<div data-slide-eyebrow class="eyebrow"></div>
+											<h2 data-slide-title></h2>
+											<p data-slide-body></p>
 											<p>
-												You are at a
+												Based on your quiz, you are currently at a
 												<strong>
 													<span data-slide-priority></span>
 												</strong>
-												level for this building block.
+												level of preparedness.
 											</p>
-											<p>View Curated Practices below to review Practices recommended by innovators and advisors for people with quiz results like yours. Or View All Practices below to review all practices related to your results.</p>
+											<div>Practices include:</div>
+											<ul data-slide-practices></ul>
 										</div>
 									</div>
 								</div>

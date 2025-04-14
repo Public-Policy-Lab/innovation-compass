@@ -6,6 +6,8 @@
 @import url("legacy-rules.css");
 @import url("buttons.css");
 @import url("levels.css");
+@import url("results-graphic.css");
+@import url("results-summary.css");
 
 /**
  * Quiz 
@@ -302,51 +304,6 @@
 	overflow: hidden;
 	border: 1px solid var(--color-navy);
 	border-radius: 7px;
-}
-
-.results-graph {
-	margin: 20px 0;
-}
-
-.results-summary {
-	display: flex;
-	flex-direction: column;
-	margin: 20px 0 0 0;
-}
-
-.results-summary .eyebrow {
-	font-size: 12px;
-	font-weight: 500;
-	line-height: 13.73px;
-	letter-spacing: 0.07em;
-	text-transform: uppercase;
-	margin-bottom: 6px;
-}
-
-.results-summary h2 {
-	font-size: 28px;
-	font-weight: 300;
-	line-height: 1;
-	margin-top: 0;
-	margin-bottom: 40px;
-}
-
-.results-summary p {
-	font-size: 14px;
-	font-weight: 300;
-	line-height: 19.6px;
-}
-
-.results-summary__buttons {
-	display: flex;
-	justify-content: space-between;
-	gap: 10px;
-	padding: 16px;
-}
-
-.results-summary__slideshow {
-	background-color: var(--color-navy-light);
-	padding: 16px;
 }
 
 .quiz__results-tabs-wrap {
@@ -686,19 +643,6 @@
 		margin: 40px 0 20px 0;
 	}
 
-	.results-graph {
-		grid-column: span 8 / 20;
-		order: 2;
-	}
-
-	.results-summary {
-		grid-column: span 7;
-		margin: 0;
-		flex-direction: column-reverse;
-		justify-content: space-between;
-		background-color: var(--color-navy-light);
-	}
-
 	.results-share {
 		top: auto;
 		right: auto;
@@ -759,11 +703,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-	.results-graph {
-		grid-column: span 15 / 24;
-		order: 2;
-	}
-
 	.quiz__activities .button-text {
 		font-size: 18px;
 	}
