@@ -260,239 +260,36 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
 
-				<!-- Results page: Tabs -->
-				<div class="quiz__results-tabs-wrap">
-					<div class="quiz__results-tabs">
-						<nav>
-							<ul>
-								<li>
-									<button data-tab="curated" class="tab tab--curated tab--is-active">View Curated Practices</button>
-								</li>
-								<li>
-									<button data-tab="all" class="tab tab--all">View All Practices</button>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
+						<!-- Results page: Activities -->
+						<div class="quiz__results-activities">
+							<div class="activities">
+								<div class="activities__header">
+									<h2>Browse All Practices Based on Your Quiz Results</h2>
 
-				<!-- Results page: Tabs Panels -->
-				<div class="quiz__results-tab-panels">
-					<div data-tab-panel="curated" class="tab-panel tab-panel--curated tab-panel--is-active">
-						<div class="quiz__results-filters-activities-wrap">
-							<!-- Results page: Filters & Activities - Curated -->
-							<div class="quiz__results-filters-activities">
-								<!-- Results page: Filters -->
-								<div class="quiz__filters">
-									<div class="filter-group">
-										<button data-toggle="priority" class="toggle">
-											<div class="filter-group__title">Filter practices by innovator recommendation</div>
-											<div class="toggle__indicator"></div>
-										</button>
-										<div data-toggle-target="priority" class="toggle__target">
-											<div class="filter-group__options">
-												<div class="options">
-													<div class="checkbox">
-														<input type="checkbox" id="high" name="priority" value="high" checked data-filter-curated />
-														<label for="high">High Recommendation</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="medium" name="priority" value="medium" checked data-filter-curated />
-														<label for="medium">Medium Recommendation</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="low" name="priority" value="low" checked data-filter-curated />
-														<label for="low">Low Recommendation</label>
-													</div>
-												</div>
-												<div class="options__overlay"></div>
-											</div>
+									<div class="activities__controls">
+										<div class="activities__control">
+											<p>Sort by:</p>
+											<select name="sort" id="sort">
+												<option value="relevance">Relevance</option>
+												<option value="alphabetical">Alphabetical</option>
+												<option value="popularity">Popularity</option>
+											</select>
 										</div>
-									</div>
-									<div class="filter-group">
-										<button data-toggle="category" class="toggle">
-											<div class="filter-group__title">Filter by building block</div>
-											<div class="toggle__indicator"></div>
-										</button>
-										<div data-toggle-target="category" class="toggle__target">
-											<div class="filter-group__options">
-												<div class="options">
-													<div class="options__title text-purple">Impact</div>
-													<div class="checkbox">
-														<input type="checkbox" id="foundational_vision_curated" name="category" value="foundational_vision" checked data-filter-curated />
-														<label for="foundational_vision_curated">Foundational Vision</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="signature_strength_curated" name="category" value="signature_strength" checked data-filter-curated />
-														<label for="signature_strength_curated">Signature Strength</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="proof_of_impact_curated" name="category" value="proof_of_impact" checked data-filter-curated />
-														<label for="proof_of_impact_curated">Proof of impact</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="organizational_culture_curated" name="category" value="organizational_culture" checked data-filter-curated />
-														<label for="organizational_culture_curated">Organizational Culture</label>
-													</div>
-													<div class="options__title text-green">Community Building</div>
-													<div class="checkbox">
-														<input type="checkbox" id="community_connection_curated" name="category" value="community_connection" checked data-filter-curated />
-														<label for="community_connection_curated">Community Connection</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="supportive_guides_curated" name="category" value="supportive_guides" checked data-filter-curated />
-														<label for="supportive_guides_curated">Supportive Guides</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="compatible_collaborators_curated" name="category" value="compatible_collaborators" checked data-filter-curated />
-														<label for="compatible_collaborators_curated">Compatible Collaborators</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="public_presence_curated" name="category" value="public_presence" checked data-filter-curated />
-														<label for="public_presence_curated">Public Presence</label>
-													</div>
-													<div class="options__title text-orange">Entrepreneurship</div>
-													<div class="checkbox">
-														<input type="checkbox" id="operating_infrastructure_curated" name="category" value="operating_infrastructure" checked data-filter-curated />
-														<label for="operating_infrastructure_curated">Operating Infrastructure</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="leadership_capacity_curated" name="category" value="leadership_capacity" checked data-filter-curated />
-														<label for="leadership_capacity_curated">Effective Leadership</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="startup_tactics_curated" name="category" value="startup_tactics" checked data-filter-curated />
-														<label for="startup_tactics_curated">Startup Tactics</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="sustainable_funding_curated" name="category" value="sustainable_funding" checked data-filter-curated />
-														<label for="sustainable_funding_curated">Sustainable Funding</label>
-													</div>
-												</div>
-												<div class="options__overlay"></div>
+										<div class="activities__control">
+											<p>View as:</p>
+											<!-- list and grid radio buttons -->
+											<div class="activities__control__view">
+												<input type="radio" name="view" id="view-list" value="list" />
+												<label for="view-list">List</label>
+												<input type="radio" name="view" id="view-grid" value="grid" />
+												<label for="view-grid">Grid</label>
 											</div>
 										</div>
 									</div>
 								</div>
-
-								<!-- Results page: Activities -->
-								<div class="quiz__activities">
-									<div data-activities-curated></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div data-tab-panel="all" class="tab-panel tab-panel--all">
-						<div class="quiz__results-filters-activities-wrap">
-							<!-- Results page: Filters & Activities - Curated -->
-							<div class="quiz__results-filters-activities">
-								<!-- Results page: Filters -->
-								<div class="quiz__filters">
-									<div class="filter-group">
-										<button data-toggle="preparedness" class="toggle">
-											<div class="filter-group__title">Filter by preparedness score</div>
-											<div class="toggle__indicator"></div>
-										</button>
-										<div data-toggle-target="preparedness" class="toggle__target">
-											<div class="filter-group__options">
-												<div class="options">
-													<div class="checkbox">
-														<input type="checkbox" id="unprepared" name="preparedness" value="unprepared" checked data-filter-all />
-														<label for="unprepared">Unprepared</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="somewhat_prepared" name="preparedness" value="somewhat_prepared" checked data-filter-all />
-														<label for="somewhat_prepared">Somewhat Prepared</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="adequately_prepared" name="preparedness" value="adequately_prepared" checked data-filter-all />
-														<label for="adequately_prepared">Adequately Prepared</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="very_prepared" name="preparedness" value="very_prepared" checked data-filter-all />
-														<label for="very_prepared">Very Prepared</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="extremely_prepared" name="preparedness" value="extremely_prepared" checked data-filter-all />
-														<label for="extremely_prepared">Extremely Prepared</label>
-													</div>
-												</div>
-												<div class="options__overlay"></div>
-											</div>
-										</div>
-									</div>
-									<div class="filter-group">
-										<button data-toggle="category" class="toggle">
-											<div class="filter-group__title">Filter by building block</div>
-											<div class="toggle__indicator"></div>
-										</button>
-										<div data-toggle-target="category" class="toggle__target">
-											<div class="filter-group__options">
-												<div class="options">
-													<div class="options__title text-purple">Impact</div>
-													<div class="checkbox">
-														<input type="checkbox" id="foundational_vision_all" name="category" value="foundational_vision" checked data-filter-all />
-														<label for="foundational_vision_all">Foundational Vision</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="signature_strength_all" name="category" value="signature_strength" checked data-filter-all />
-														<label for="signature_strength_all">Signature Strength</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="proof_of_impact_all" name="category" value="proof_of_impact" checked data-filter-all />
-														<label for="proof_of_impact_all">Proof of impact</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="organizational_culture_all" name="category" value="organizational_culture" checked data-filter-all />
-														<label for="organizational_culture_all">Organizational Culture</label>
-													</div>
-													<div class="options__title text-green">Community Building</div>
-													<div class="checkbox">
-														<input type="checkbox" id="community_connection_all" name="category" value="community_connection" checked data-filter-all />
-														<label for="community_connection_all">Community Connection</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="supportive_guides_all" name="category" value="supportive_guides" checked data-filter-all />
-														<label for="supportive_guides_all">Supportive Guides</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="compatible_collaborators_all" name="category" value="compatible_collaborators" checked data-filter-all />
-														<label for="compatible_collaborators_all">Compatible Collaborators</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="public_presence_all" name="category" value="public_presence" checked data-filter-all />
-														<label for="public_presence_all">Public Presence</label>
-													</div>
-													<div class="options__title text-orange">Entrepreneurship</div>
-													<div class="checkbox">
-														<input type="checkbox" id="operating_infrastructure_all" name="category" value="operating_infrastructure" checked data-filter-all />
-														<label for="operating_infrastructure_all">Operating Infrastructure</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="leadership_capacity_all" name="category" value="leadership_capacity" checked data-filter-all />
-														<label for="leadership_capacity_all">Effective Leadership</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="startup_tactics_all" name="category" value="startup_tactics" checked data-filter-all />
-														<label for="startup_tactics_all">Startup Tactics</label>
-													</div>
-													<div class="checkbox">
-														<input type="checkbox" id="sustainable_funding_all" name="category" value="sustainable_funding" checked data-filter-all />
-														<label for="sustainable_funding_all">Sustainable Funding</label>
-													</div>
-												</div>
-												<div class="options__overlay"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Results page: Activities -->
-								<div class="quiz__activities">
-									<div data-activities-all></div>
+								<div class="activities__body">
+									<div data-activities></div>
 								</div>
 							</div>
 						</div>

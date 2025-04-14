@@ -34,9 +34,6 @@ const quizApp = {
 		this.injectHtml().then(() => {
 			this.initHooks();
 			this.loadAllData();
-			this.initTabs();
-			this.initFiltersCurated();
-			this.initFiltersAll();
 			toggleApp.init();
 		});
 
@@ -110,10 +107,7 @@ const quizApp = {
 				practices: document.querySelector("[data-slide-practices]"),
 				priority: document.querySelector("[data-slide-priority]"),
 			},
-			activities: {
-				curated: document.querySelector("[data-activities-curated]"),
-				all: document.querySelector("[data-activities-all]"),
-			},
+			activities: document.querySelector("[data-activities]"),
 		};
 
 		// Buttons
@@ -774,49 +768,71 @@ const quizApp = {
 
 		this.activities.sort(this.prioritySort);
 
-		// Build activity groups
-		let html = "";
-		let previous = {
-			priority: 0,
-		};
-
 		this.activities.forEach((activity, index) => {
-			if (activity.priority_name != previous.priority_name) {
-				html = this.buildActivityGroup("curated", activity);
-				this.hooks.templates.activities.curated.insertAdjacentHTML("beforeend", html);
-			}
-
 			html = this.buildActivity("curated", activity);
 			// this.hooks.templates.activities.innerHTML += html;
 			// Using innerHTML means that any JavaScript references to the descendants of element will be removed.
 			// The insertAdjacentHTML method does not reparse the element it is invoked on, so it does not corrupt the element.
-			this.hooks.templates.activities.curated.insertAdjacentHTML("beforeend", html);
-
-			previous = activity;
-		});
-		this.activities.sort(this.preparednessSort);
-		html = "";
-		previous = {
-			priority: 0,
-		};
-
-		this.activities.forEach((activity, index) => {
-			if (activity.answer != previous.answer) {
-				html = this.buildActivityGroup("all", activity);
-				this.hooks.templates.activities.all.insertAdjacentHTML("beforeend", html);
-			}
-
-			html = this.buildActivity("all", activity);
-			// this.hooks.templates.activities.innerHTML += html;
-			// Using innerHTML means that any JavaScript references to the descendants of element will be removed.
-			// The insertAdjacentHTML method does not reparse the element it is invoked on, so it does not corrupt the element.
-			this.hooks.templates.activities.all.insertAdjacentHTML("beforeend", html);
-
-			previous = activity;
+			this.hooks.templates.activities.insertAdjacentHTML("beforeend", html);
 		});
 
 		// Initialize all tooltips
 		tooltipApp.init();
+	},
+
+	buildActivity: function (type, activity) {
+		let priority = this.getPriority(activity.priority);
+		let preparedness = this.getPreparedness(activity.answer);
+
+		if (type == "curated") {
+			var classes = activity.building_block + " " + priority;
+		} else {
+			var classes = activity.building_block + " " + preparedness;
+		}
+
+		if (activity.category == "impact") {
+			var header_class = "text-purple";
+		} else if (activity.category == "community") {
+			var header_class = "text-green";
+		} else {
+			var header_class = "text-orange";
+		}
+		let html = `
+			<div
+				role="list"
+				class="${classes}"
+				data-activity-${type}>
+				<div
+					role="listitem"
+					class="">
+					<div
+						class="bb-activity-tile-div">
+						<div
+							class="bb-activity-tile-rounded-border">
+							<div
+								class="bb-activity-tile-top-grid">
+								<div
+									class="bb-tag-text block-display ${header_class}">
+									${activity.title}
+								</div>
+								<div
+									class="bb-activity-tile-title">
+									${activity.activity_name}
+								</div>
+							</div>
+							<a
+								href="${activity.activity_url}"
+								target="_blank"
+								class="button w-inline-block">
+								<div
+									class="button-text">Go To Practice</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>`;
+
+		return html;
 	},
 
 	prioritySort: function (a, b) {
@@ -884,215 +900,6 @@ const quizApp = {
 				containerNode.innerHTML = text;
 			})
 			.catch((e) => console.error(e));
-	},
-
-	buildActivity: function (type, activity) {
-		let priority = this.getPriority(activity.priority);
-		let preparedness = this.getPreparedness(activity.answer);
-		if (type == "curated") {
-			var classes = activity.building_block + " " + priority;
-		} else {
-			var classes = activity.building_block + " " + preparedness;
-		}
-		if (activity.category == "impact") {
-			var header_class = "text-purple";
-		} else if (activity.category == "community") {
-			var header_class = "text-green";
-		} else {
-			var header_class = "text-orange";
-		}
-		let html = `
-			<div
-				role="list"
-				class="${classes}"
-				data-activity-${type}>
-				<div
-					role="listitem"
-					class="collection-item-4 w-dyn-item w-col w-col-4">
-					<div
-						class="bb-activity-tile-div">
-						<div
-							class="bb-activity-tile-rounded-border">
-							<div
-								class="bb-activity-tile-top-grid">
-								<div
-									class="bb-tag-text block-display ${header_class}">
-									${activity.title}
-								</div>
-								<div
-									class="bb-activity-tile-title">
-									${activity.activity_name}
-								</div>
-							</div>
-							<a
-								href="${activity.activity_url}"
-								target="_blank"
-								class="button w-inline-block">
-								<div
-									class="button-text">Go To Practice</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>`;
-
-		return html;
-	},
-
-	buildActivityGroup: function (type, activity) {
-		if (type == "curated") {
-			var headline = "The following practices are a <strong>" + activity.priority_name + "</strong> recommendation for you";
-			var tooltip = "Based on your quiz results, innovators and experts believe these practices are of <strong>" + activity.priority_name + "</strong> priority for you";
-			var activity_group_id = activity.priority_name;
-		} else {
-			// replace underscores with spaces
-			preparedness = activity.preparedness.replace(/_/g, " ");
-			var headline = "You indicated that you are <strong>" + preparedness + "</strong> for the following practices";
-			var tooltip = "The following practices are organized by your preparedness level based on your quiz results.";
-			var activity_group_id = activity.preparedness;
-		}
-
-		let html = `
-			<div class="activity-group" activity-group-id="${activity_group_id}">
-				<button data-tooltip class="activity-group__title tooltip">
-					<div>
-						${headline}
-						<div class="tooltip__icon"></div>
-						<div class="tooltip__anchor">
-							<article data-tooltip-content class="hidden tooltip__content">
-								<h1>How this is calculated</h1>
-								<p>${tooltip}</p>
-							</article>
-						</div>
-					</div>
-				</button>
-			</div>`;
-
-		return html;
-	},
-
-	initTabs: function () {
-		const tabs = document.querySelectorAll("[data-tab]");
-		const tabPanels = document.querySelectorAll("[data-tab-panel]");
-
-		tabs.forEach((tab) => {
-			tab.addEventListener("click", (e) => {
-				e.preventDefault();
-
-				// get the tab id
-				const tabId = tab.getAttribute("data-tab");
-
-				this.sort = tabId;
-
-				// remove active class from all tabs
-				tabs.forEach((tab) => {
-					tab.classList.remove("tab--is-active");
-				});
-
-				// add active class to the clicked tab
-				tab.classList.add("tab--is-active");
-
-				// hide all tab panels
-				tabPanels.forEach((panel) => {
-					panel.classList.remove("tab-panel--is-active");
-				});
-
-				// show the clicked tab pane
-				const selectedPanel = document.querySelector(`[data-tab-panel="${tabId}"]`);
-				selectedPanel.classList.add("tab-panel--is-active");
-			});
-		});
-	},
-
-	initFiltersCurated: function () {
-		const filters_elements = document.querySelectorAll("[data-filter-curated]");
-
-		filters_elements.forEach((filter_element) => {
-			filter_element.addEventListener("change", (e) => {
-				var activities = document.querySelectorAll("[data-activity-curated]");
-				var selected_filters = [];
-
-				e.preventDefault();
-
-				if (e.target.name == "preparedness" || e.target.name == "priority") {
-					activity_group = document.querySelector(`[activity-group-id="${e.target.value}"]`);
-					if (e.target.checked) {
-						activity_group.classList.remove("hidden");
-					} else {
-						activity_group.classList.add("hidden");
-					}
-				}
-
-				filters_elements.forEach((filter) => {
-					if (filter.checked) {
-						// Add filter to selected filters
-						selected_filters.push(filter.value);
-					}
-				});
-
-				// Add hidden class to everything in activities
-				activities.forEach((activity) => {
-					activity.classList.remove("hidden");
-					// Loop through classes of activity
-					var classes = activity.classList;
-					var show = true;
-					classes.forEach((activity_class) => {
-						if (!selected_filters.includes(activity_class)) {
-							show = false;
-						}
-					});
-					// If show is false, hide the activity
-					if (!show) {
-						activity.classList.add("hidden");
-					}
-				});
-			});
-		});
-	},
-
-	initFiltersAll: function () {
-		const filters_elements = document.querySelectorAll("[data-filter-all]");
-
-		filters_elements.forEach((filter_element) => {
-			filter_element.addEventListener("change", (e) => {
-				var activities = document.querySelectorAll("[data-activity-all]");
-				var selected_filters = [];
-
-				e.preventDefault();
-				if (e.target.name == "preparedness" || e.target.name == "priority") {
-					activity_group = document.querySelector(`[activity-group-id="${e.target.value}"]`);
-					if (e.target.checked) {
-						activity_group.classList.remove("hidden");
-					} else {
-						activity_group.classList.add("hidden");
-					}
-				}
-
-				filters_elements.forEach((filter) => {
-					if (filter.checked) {
-						// Add filter to selected filters
-						selected_filters.push(filter.value);
-					}
-				});
-
-				// Add hidden class to everything in activities
-				activities.forEach((activity) => {
-					activity.classList.remove("hidden");
-					// Loop through classes of activity
-					var classes = activity.classList;
-					var show = true;
-					classes.forEach((activity_class) => {
-						if (!selected_filters.includes(activity_class)) {
-							show = false;
-						}
-					});
-					// If show is false, hide the activity
-					if (!show) {
-						activity.classList.add("hidden");
-					}
-				});
-			});
-		});
 	},
 
 	buildShareableURL: function () {
