@@ -9,6 +9,8 @@
 @import url("results-graphic.css");
 @import url("results-summary.css");
 @import url("activities.css");
+@import url("option-group.css");
+
 /**
  * Quiz 
  * ============================================================ */
@@ -250,47 +252,6 @@
 
 .quiz__card .quiz__card__headline.quiz__card__headline--titlepage {
 	margin: 0 0 90px 0;
-}
-
-.option-group {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	margin-bottom: 24px;
-}
-
-.option-group .option {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-}
-
-.option-group .option label {
-	font-size: 18px;
-	font-weight: 300;
-	line-height: 22px;
-	margin: 0;
-}
-
-.option-group .option input[type="radio"] {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 15px;
-	height: 15px;
-	border: 1px solid var(--color-navy);
-	border-radius: 50%;
-	outline: none;
-	cursor: pointer;
-	margin-top: 1px;
-}
-
-.option-group .option input[type="radio"].has--error {
-	border-color: var(--color-error);
-}
-
-.option-group .option input[type="radio"]:checked {
-	background-color: var(--color-navy);
-	box-shadow: inset 0 0 0 4px var(--color-white);
 }
 
 .quiz__buttons {

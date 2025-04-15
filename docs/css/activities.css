@@ -2,7 +2,8 @@
 }
 
 .activities__header {
-	padding: 20px;
+	padding: 0 20px;
+	margin: 20px 0;
 }
 
 .activities__header h2 {
@@ -19,8 +20,72 @@
 	align-items: center;
 }
 
+.activities__controls p,
+.activities__controls label {
+	margin: 0;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 1;
+}
+
+.activities__control {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.activities__control .radio-group {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.activities__control .radio-group__item input[type="radio"] {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+
+.activities__control .radio-group__item input[type="radio"]:checked + label {
+	border: 1px solid var(--color-navy);
+}
+
+.activities__control .radio-group__item label {
+	cursor: pointer;
+	padding: 4px;
+	border: 1px solid transparent;
+}
+
+.activities__control .radio-group__item label .activities__control__icon {
+	display: block;
+	width: 13px;
+	height: 12px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.activities__control .radio-group__item label .activities__control__text {
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+
+.activities__control .radio-group__item label[for="view-list"] .activities__control__icon {
+	background-image: url(../images/icons/view-list.svg);
+}
+
+.activities__control .radio-group__item label[for="view-grid"] .activities__control__icon {
+	background-image: url(../images/icons/view-grid.svg);
+}
+
 .activities__body {
-	padding: 20px;
+	padding: 0 20px;
+	margin: 20px 0;
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
 	gap: 10px;
