@@ -1,4 +1,4 @@
-var leaveCheck = false;
+var leaveCheck = true;
 
 document.addEventListener("DOMContentLoaded", function () {
 	quizApp.init();
