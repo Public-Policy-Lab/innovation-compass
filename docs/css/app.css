@@ -3,13 +3,13 @@
 @import url("clock.css");
 @import url("text-colors.css");
 @import url("tooltips.css");
-@import url("legacy-rules.css");
 @import url("buttons.css");
 @import url("levels.css");
 @import url("results-graphic.css");
 @import url("results-summary.css");
 @import url("activities.css");
 @import url("option-group.css");
+@import url("summary-modal.css");
 
 /**
  * Quiz 

@@ -31,13 +31,19 @@
 .activities__control {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 5px;
+}
+
+.activities__control select {
+	border: none;
+	font-size: 12px;
+	line-height: 1;
 }
 
 .activities__control .radio-group {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 5px;
 }
 
 .activities__control .radio-group__item input[type="radio"] {
@@ -56,6 +62,11 @@
 	cursor: pointer;
 	padding: 4px;
 	border: 1px solid transparent;
+}
+
+.activities__control .radio-group__item label:hover,
+.activities__control .radio-group__item label:focus {
+	border: 1px solid var(--color-navy-light);
 }
 
 .activities__control .radio-group__item label .activities__control__icon {
@@ -87,12 +98,171 @@
 	padding: 0 20px;
 	margin: 20px 0;
 	display: grid;
+}
+
+.activities__body .activities__group-title {
+	font-weight: 300;
+	font-size: 30px;
+	line-height: 1;
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	border-top: 1px solid var(--color-navy);
+	grid-column: 1 / -1;
+}
+
+.activities__body .activity + .activities__group-title {
+	margin-top: 60px;
+}
+
+.activities__body .activity {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.activities__body .activity__inner {
+	text-decoration: none;
+}
+
+.activities__body .activity__eyebrow {
+	font-weight: 500;
+	font-size: 10px;
+	line-height: 1;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	margin-bottom: 6px;
+}
+
+.activities__body .activity__title {
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 1.125;
+	margin: 0;
+}
+
+.activities__body .activity__priority {
+	display: block;
+}
+
+/* List */
+.activities__body--list {
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.activities__body--list .activity {
+	position: relative;
+	border-top: 1px solid var(--color-navy);
+	padding: 12px 0 12px 0;
+}
+
+.activities__body--list .activity__inner {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.activities__body--list .activity__title {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 10px;
+	margin: 8px 0 18px 0;
+}
+
+.activities__body--list .activity__title__link-icon {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/icons/external.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	flex-shrink: 0;
+}
+
+.activities__body--list .activity__priority {
+	margin: 0 0 10px 0;
+}
+
+.activities__body--list .activity__link {
+	display: none;
+}
+
+/* Grid */
+.activities__body--grid {
 	grid-template-columns: repeat(1, 1fr);
 	gap: 10px;
 }
 
+.activities__body--grid .activity {
+	border: 1px solid var(--color-navy);
+	padding: 4px;
+}
+
+.activities__body--grid .activity__inner {
+	border: 1px solid var(--color-navy);
+	border-radius: 9px;
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+	min-height: 240px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.activities__body--grid .activity__eyebrow {
+	font-size: 12px;
+}
+
+.activities__body--grid .activity__priority {
+	margin: 12px 0;
+}
+
+.activities__body--grid .activity__link {
+	margin-top: auto;
+}
+
+.activities__body--grid .activity__link .button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 10px;
+	line-height: 1;
+	height: 30px;
+	padding: 5px 8px;
+}
+
 @media screen and (min-width: 768px) {
-	.activities__body {
+	.activities__controls {
+		justify-content: start;
+		gap: 50px;
+		margin-top: 100px;
+	}
+
+	.activities__body--list .activity__inner {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 90px;
+	}
+
+	.activities__body--list .activity__title__link-icon {
+		position: absolute;
+		right: 0;
+	}
+
+	.activities__body--list .activity__priority {
+		margin: 0;
+	}
+
+	.activities__body--list .activity__priority .level {
+		width: 116px;
+		height: 24px;
+	}
+
+	.activities__body--grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
@@ -103,13 +273,18 @@
 		margin-bottom: 24px;
 	}
 
-	.activities__body {
+	.activities__body .activity .activity__title {
+		font-size: 24px;
+		line-height: 1;
+	}
+
+	.activities__body--grid {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
 @media screen and (min-width: 1280px) {
-	.activities__body {
+	.activities__body--grid {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }

@@ -1,0 +1,47 @@
+.summary-modal {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.35);
+	z-index: 1000;
+	padding: 20px;
+}
+
+.summary-modal__content {
+	position: relative;
+	padding: 24px 20px 16px 20px;
+	background: var(--color-white);
+	border: 1px solid var(--color-navy);
+	max-width: 340px;
+	margin: 100px auto 0 auto;
+}
+
+.summary-modal h2 {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 1;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	margin-top: 0;
+}
+
+.summary-modal p {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.summary-modal__close-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.summary-modal__close-button .button {
+	display: block;
+	padding: 10px;
+	height: auto;
+	margin: 5px 5px 0 0;
+}

@@ -211,7 +211,8 @@
 							</div>
 							<div class="results-summary">
 								<div class="results-summary__buttons">
-									<div data-slideshow-buttons class="button-set">
+									<button data-begin-button class="button w-inline-block">Begin</button>
+									<div data-slideshow-buttons class="hidden button-set">
 										<button data-prev-block-button class="button w-inline-block">
 											<div class="button__arrow-left"></div>
 										</button>
@@ -235,7 +236,7 @@
 											<h2>How to Use This Chart</h2>
 											<p>This chart visually represents your strengths and growth areas across the twelve building blocks.</p>
 											<p>
-												Your areas of strength will show: <span class="level level--inline level--high"></span> of preparedness. Your areas for improvement will show:
+												Your areas of strength will show a <span class="level level--inline level--high"></span> level of preparedness. Your areas for improvement will show:
 												<span class="level level--inline level--low"></span>
 												or
 												<span class="level level--inline level--medium"></span>
@@ -259,6 +260,24 @@
 									</div>
 								</div>
 							</div>
+							<!-- Summary modal-->
+							<div data-summary-modal class="hidden summary-modal">
+								<div class="summary-modal__content">
+									<h2>How to Use This Quiz</h2>
+									<p>View your results across the building blocks by clicking a label or spoke on the chart.</p>
+									<p>
+										Your areas of strength will show a <span class="level level--inline level--high"></span> level of preparedness. Your areas for improvement will show a
+										<span class="level level--inline level--low"></span>
+										or
+										<span class="level level--inline level--medium"></span> level.
+									</p>
+									<div class="summary-modal__close-button">
+										<button data-summary-modal-close-button class="button button--bg-transparent button-border-none">
+											<div class="button__x-mark"></div>
+										</button>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<!-- Results page: Activities -->
@@ -272,10 +291,10 @@
 									<div class="activities__controls">
 										<div class="activities__control">
 											<p>Sort by:</p>
-											<select name="sort" id="sort">
-												<option value="relevance">Relevance</option>
-												<option value="alphabetical">Alphabetical</option>
-												<option value="popularity">Popularity</option>
+											<select data-sort-select name="sort" id="sort">
+												<option data-sort-option value="level-low-to-high">Level (Low to High)</option>
+												<option data-sort-option value="level-high-to-low">Level (High to Low)</option>
+												<option data-sort-option value="building-blocks">Building Blocks</option>
 											</select>
 										</div>
 										<div class="activities__control">
@@ -283,14 +302,14 @@
 											<div class="radio-group">
 												<div class="radio-group__item">
 													<input type="radio" name="view" id="view-list" value="list" checked />
-													<label for="view-list">
+													<label for="view-list" data-view-list-button>
 														<span class="activities__control__icon"></span>
 														<span class="activities__control__text">List</span>
 													</label>
 												</div>
 												<div class="radio-group__item">
 													<input type="radio" name="view" id="view-grid" value="grid" />
-													<label for="view-grid">
+													<label for="view-grid" data-view-grid-button>
 														<span class="activities__control__icon"></span>
 														<span class="activities__control__text">Grid</span>
 													</label>
@@ -299,7 +318,7 @@
 										</div>
 									</div>
 								</div>
-								<div data-activities class="activities__body"></div>
+								<div data-activities class="activities__body activities__body--list"></div>
 							</div>
 						</div>
 					</div>
