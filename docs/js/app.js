@@ -1,4 +1,4 @@
-var leaveCheck = false;
+var leaveCheck = true;
 
 document.addEventListener("DOMContentLoaded", function () {
 	quizApp.init();
@@ -1033,7 +1033,6 @@ const quizApp = {
 	},
 
 	sortActivities: function (selectedOption) {
-		console.log(selectedOption);
 		switch (selectedOption) {
 			case "level-low-to-high":
 				this.activities.sort(this.prioritySort);
