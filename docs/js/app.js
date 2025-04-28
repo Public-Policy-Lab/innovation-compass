@@ -338,15 +338,17 @@ const quizApp = {
 
 	copyShareUrl: function () {
 		const url = window.location.href;
-		navigator.clipboard.writeText(url).then(
-			function () {
-				console.log("Copied!");
-				alert("Results link copied to clipboard!");
-			},
-			function (err) {
-				console.error("Could not copy: ", err);
-			}
-		);
+		const subject = "My Innovation Compass Results";
+		const message = "Here are my Innovation Compass results. Click the link below to view them:";
+		const mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message + "\n\n" + url)}`;
+
+		// Temporarily disable leaveCheck
+		leaveCheck = false;
+		window.location.href = mailtoLink;
+		// Re-enable leaveCheck after a short delay
+		setTimeout(() => {
+			leaveCheck = true;
+		}, 1000);
 	},
 
 	createCSVDownload: function () {
