@@ -141,7 +141,7 @@
 	margin: 0;
 }
 
-.activities__body .activity__priority {
+.activities__body .activity__preparedness {
 	display: block;
 }
 
@@ -181,7 +181,7 @@
 	flex-shrink: 0;
 }
 
-.activities__body--list .activity__priority {
+.activities__body--list .activity__preparedness {
 	margin: 0 0 10px 0;
 }
 
@@ -216,7 +216,7 @@
 	font-size: 12px;
 }
 
-.activities__body--grid .activity__priority {
+.activities__body--grid .activity__preparedness {
 	margin: 12px 0;
 }
 
@@ -253,11 +253,11 @@
 		right: 0;
 	}
 
-	.activities__body--list .activity__priority {
+	.activities__body--list .activity__preparedness {
 		margin: 0;
 	}
 
-	.activities__body--list .activity__priority .level {
+	.activities__body--list .activity__preparedness .level {
 		width: 116px;
 		height: 24px;
 	}

@@ -130,7 +130,7 @@ const quizApp = {
 				title: document.querySelector("[data-slide-title]"),
 				body: document.querySelector("[data-slide-body]"),
 				practices: document.querySelector("[data-slide-practices]"),
-				priority: document.querySelector("[data-slide-priority]"),
+				preparedness: document.querySelector("[data-slide-preparedness]"),
 			},
 			activities: document.querySelector("[data-activities]"),
 		};
@@ -184,8 +184,7 @@ const quizApp = {
 			this.copyShareUrl();
 		});
 		this.hooks.buttons.sort.select.addEventListener("change", () => {
-			const selectedOption = this.hooks.buttons.sort.select.value;
-			this.sortActivities(selectedOption);
+			this.buildActivities();
 		});
 		this.hooks.buttons.view.list.addEventListener("click", () => {
 			this.viewActivitiesAsList();
@@ -641,19 +640,19 @@ const quizApp = {
 			this.hooks.templates.slide.title.innerHTML = block.title;
 			this.hooks.templates.slide.body.innerHTML = block.description;
 
-			// Output the priority
-			switch (block.priority) {
+			// Output the preparedness
+			switch (block.preparedness) {
 				case "low":
-					this.hooks.templates.slide.priority.innerHTML = `<span class="level level--inline level--low"></span>`;
+					this.hooks.templates.slide.preparedness.innerHTML = `<span class="level level--inline level--low"></span>`;
 					break;
 				case "medium":
-					this.hooks.templates.slide.priority.innerHTML = `<span class="level level--inline level--medium"></span>`;
+					this.hooks.templates.slide.preparedness.innerHTML = `<span class="level level--inline level--medium"></span>`;
 					break;
 				case "high":
-					this.hooks.templates.slide.priority.innerHTML = `<span class="level level--inline level--high"></span>`;
+					this.hooks.templates.slide.preparedness.innerHTML = `<span class="level level--inline level--high"></span>`;
 					break;
 				default:
-					this.hooks.templates.slide.priority.innerHTML = `<span class="level level--inline level--unknown"></span>`;
+					this.hooks.templates.slide.preparedness.innerHTML = `<span class="level level--inline level--unknown"></span>`;
 					break;
 			}
 
@@ -804,8 +803,6 @@ const quizApp = {
 	doCalculations: function () {
 		this.quiz.forEach((item) => {
 			if (item.weighting) {
-				item.priority = parseInt(item.answer);
-				item.priority_name = this.getPriority(item.priority);
 				item.preparedness = this.getPreparedness(item.answer);
 				this.blocks[item.building_block].items.push(item);
 			}
@@ -815,16 +812,14 @@ const quizApp = {
 		for (let block in this.blocks) {
 			let total = 0;
 			this.blocks[block].items.forEach((item) => {
-				total += item.priority;
+				total += parseInt(item.answer);
 			});
-			this.blocks[block].average = total / this.blocks[block].items.length;
-			// Round
-			this.blocks[block].average = Math.round(this.blocks[block].average);
-		}
 
-		// Add proficiency to the blocks
-		for (let block in this.blocks) {
-			this.blocks[block].priority = this.getProficiency(this.blocks[block].average);
+			// Set the average
+			this.blocks[block].average = Math.round(total / this.blocks[block].items.length);
+
+			// Set the preparedness
+			this.blocks[block].preparedness = this.getPreparedness(this.blocks[block].average);
 		}
 
 		this.blockKeys = Object.keys(this.blocks);
@@ -846,7 +841,6 @@ const quizApp = {
 		// Create activities list
 		this.quiz.forEach((item, index) => {
 			if (item.weighting) {
-				item.block_priority = this.blocks[item.building_block].priority;
 				item.title = this.blocks[item.building_block].title;
 				this.activities.push(item);
 			}
@@ -855,18 +849,8 @@ const quizApp = {
 		// Get the sort option
 		const sortOption = this.hooks.buttons.sort.select.value;
 
-		// Sort activities
-		switch (sortOption) {
-			case "level-low-to-high":
-				this.activities.sort(this.prioritySortAscending);
-				break;
-			case "level-high-to-low":
-				this.activities.sort(this.prioritySortDescending);
-				break;
-			case "building-blocks":
-				this.activities.sort(this.categorySort);
-				break;
-		}
+		// Sort the activities
+		this.sortActivities(sortOption);
 
 		let previousCategory = "";
 		let activityGroupHTML = "";
@@ -917,19 +901,18 @@ const quizApp = {
 	},
 
 	buildActivity: function (activity) {
-		const priority = this.getPriority(activity.priority);
-
-		// Set priority icon
-		let priority_icon = "";
-		switch (priority) {
+		const preparedness = this.getPreparedness(activity.answer);
+		// Set preparedness icon
+		let preparedness_icon = "";
+		switch (preparedness) {
 			case "high":
-				priority_icon = `<span class="level level--high"></span>`;
+				preparedness_icon = `<span class="level level--high"></span>`;
 				break;
 			case "medium":
-				priority_icon = `<span class="level level--medium"></span>`;
+				preparedness_icon = `<span class="level level--medium"></span>`;
 				break;
 			case "low":
-				priority_icon = `<span class="level level--low"></span>`;
+				preparedness_icon = `<span class="level level--low"></span>`;
 				break;
 		}
 
@@ -957,7 +940,7 @@ const quizApp = {
 						<span class="activity__title__link-icon"></span>
 					</h3>
 				</div>
-				<div class="activity__priority">${priority_icon}</div>
+				<div class="activity__preparedness">${preparedness_icon}</div>
 				<div class="activity__link">					
 					<button class="button" target="_blank">Go To Practice</button>
 				</div>
@@ -968,27 +951,17 @@ const quizApp = {
 		return html;
 	},
 
-	prioritySortDescending: function (a, b) {
-		if (a.priority < b.priority) {
+	preparednessSortDescending: function (a, b) {
+		if (a.answer > b.answer) {
 			return -1;
 		}
-		if (a.priority > b.priority) {
+		if (a.answer < b.answer) {
 			return 1;
 		}
 		return 0;
 	},
 
-	prioritySortAscending: function (a, b) {
-		if (a.priority > b.priority) {
-			return -1;
-		}
-		if (a.priority < b.priority) {
-			return 1;
-		}
-		return 0;
-	},
-
-	preparednessSort: function (a, b) {
+	preparednessSortAscending: function (a, b) {
 		if (a.answer < b.answer) {
 			return -1;
 		}
@@ -1005,67 +978,30 @@ const quizApp = {
 		return 1;
 	},
 
-	categorySort: function (a, b) {
-		// There are 3 categories: impact, community, entrepreneurship
-		// We want to sort them in the order of community, impact, entrepreneurship
-		const categories = ["community", "impact", "entrepreneurship"];
-		const aIndex = categories.indexOf(a.category);
-		const bIndex = categories.indexOf(b.category);
-		return aIndex - bIndex;
-	},
-
-	getProficiency: function (score) {
-		if (score <= 1) {
-			return "low";
-		} else if (score <= 3) {
-			return "medium";
-		} else {
-			return "high";
-		}
-	},
-
-	getPriority: function (score) {
-		if (score <= 1) {
-			return "high";
-		} else if (score <= 3) {
-			return "medium";
-		} else {
-			return "low";
-		}
-	},
-
-	getPreparedness: function (answer) {
-		if (answer == 0) {
-			return "unprepared";
-		} else if (answer == 1) {
-			return "somewhat_prepared";
-		} else if (answer == 2) {
-			return "adequately_prepared";
-		} else if (answer == 3) {
-			return "very_prepared";
-		} else if (answer == 4) {
-			return "extremely_prepared";
-		} else {
-			return "unknown_prepareness";
-		}
-	},
-
 	sortActivities: function (selectedOption) {
 		switch (selectedOption) {
 			case "level-low-to-high":
-				this.activities.sort(this.prioritySort);
+				this.activities.sort(this.preparednessSortAscending);
 				break;
 			case "level-high-to-low":
-				this.activities.sort(this.prioritySort);
+				this.activities.sort(this.preparednessSortDescending);
 				break;
 			case "building-blocks":
 				this.activities.sort(this.buildingBlockSort);
 				break;
 		}
-
-		// Rebuild the activities
-		this.buildActivities();
 	},
+
+	getPreparedness: function (answer) {
+		if (answer <= 1) {
+			return "low";
+		} else if (answer <= 3) {
+			return "medium";
+		} else {
+			return "high";
+		}
+	},
+
 	viewActivitiesAsList: function () {
 		this.hooks.templates.activities.classList.remove("activities__body--grid");
 		this.hooks.templates.activities.classList.add("activities__body--list");
