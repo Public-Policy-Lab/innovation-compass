@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
+const debug = true;
+
 const quizApp = {
 	hooks: {},
 	quiz: null,
@@ -25,6 +27,12 @@ const quizApp = {
 	currentDateTime: null,
 	gid: null,
 	participantId: null,
+
+	log: function (...messages) {
+		if (debug) {
+			console.log(...messages);
+		}
+	},
 
 	init: function () {
 		if (window.location.hostname != "www.innovationcompass.io") {
@@ -77,7 +85,7 @@ const quizApp = {
 				return decodeURIComponent(pair[1]);
 			}
 		}
-		console.log("Query variable %s not found", variable);
+		this.log("Query variable %s not found", variable);
 	},
 
 	initHooks: function () {
@@ -220,6 +228,14 @@ const quizApp = {
 				}
 			});
 		}
+
+		// Enter key for next frame
+		const thisFramesNextButton = this.hooks.buttons.nextFrame[this.currentFrame];
+		document.addEventListener("keydown", function (event) {
+			if (event.key === "Enter") {
+				thisFramesNextButton.click();
+			}
+		});
 
 		// Secret keyboard shortcut: Shift + C
 		document.addEventListener("keydown", function (event) {
@@ -397,7 +413,7 @@ const quizApp = {
 
 		// Loop through all rows matching header with data and displaying them as a pair
 		rows[0].forEach((item, index) => {
-			console.log(item, rows[1][index]);
+			this.log(item, rows[1][index]);
 		});
 
 		// Convert the rows array to a CSV string
@@ -556,7 +572,7 @@ const quizApp = {
 		for (let block in this.blocks) {
 			const hand = document.querySelector("[data-hand-block-id='" + block + "']");
 			const average = this.blocks[block].average;
-			const reach = Math.floor(this.scaleValue(average, 0, 12, 1, 12));
+			const reach = Math.floor(this.scaleValue(average, 0, 4, 1, 12));
 
 			if (hand) {
 				hand.setAttribute("data-hand-reach", reach);
@@ -788,7 +804,7 @@ const quizApp = {
 	doCalculations: function () {
 		this.quiz.forEach((item) => {
 			if (item.weighting) {
-				item.priority = item.answer * item.weighting;
+				item.priority = parseInt(item.answer);
 				item.priority_name = this.getPriority(item.priority);
 				item.preparedness = this.getPreparedness(item.answer);
 				this.blocks[item.building_block].items.push(item);
