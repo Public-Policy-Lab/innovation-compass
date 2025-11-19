@@ -2,22 +2,17 @@
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-Innovation Compass is an interactive assessment tool that helps users evaluate their preparedness across different innovation practices. The application presents a series of questions, calculates results based on user responses, and provides personalized recommendations organized by building blocks and categories.
+Innovation Compass helps early-stage innovators develop the 12 fundamental capacities they need to make their venture succeed. It is developed in collaboration with undercapitalized innovators deploying science and technology. The work was supported by funding from the National Science Foundation (Award #2331195).
 
-This project was developed in collaboration with undercapitalized innovators deploying science and technology. The work was supported by funding from the National Science Foundation (Award #2331195).
+Learning how to navigate the innovation ecosystem is overwhelming and complex. Innovation Compass is your guide to the intricate process of developing the fundamental capacities needed to gain confidence in taking the next step of your innovation journey.
 
 ## Overview
 
-Innovation Compass is a client-side web application that:
+Meet Innovation Compass, designed by and for a broad range of early-stage founders. The platform includes:
 
-- Presents users with a multi-step quiz about innovation practices
-- Organizes questions into categories (Community, Impact, Entrepreneurship)
-- Calculates preparedness scores for different building blocks
-- Generates shareable results URLs
-- Displays results with visual indicators and recommended activities
-- Allows users to email their results
-
-The application is built with vanilla JavaScript, HTML, and CSS—no build process or dependencies required. It can run entirely from static files served by any web server.
+- 12 Building Blocks: A framework to help you learn what matters most for your company's success.
+- 40 Practices: A curated set of steps that breaks down the complexity of starting a company.
+- 201 Resources: Hand picked resources to provide you with the best learning opportunities
 
 ## Features
 
@@ -32,6 +27,9 @@ The application is built with vanilla JavaScript, HTML, and CSS—no build proce
 - **Responsive Design**: Works on desktop and mobile devices
 - **Google Analytics Integration**: Optional tracking support
 - **Participant Gateway**: Optional participant ID collection modal
+
+The application is built with vanilla JavaScript, HTML, and CSS—no build process or dependencies required. It can run entirely from static files served by any web server.
+
 
 ## Project Structure
 
