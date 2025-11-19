@@ -23,8 +23,9 @@ const quizApp = {
 	currentBlock: 0,
 	blockKeys: [],
 	activities: [],
-	baseUrl: "https://public-policy-lab.github.io/innovation-compass/",
+	baseUrl: "",
 	currentDateTime: null,
+	gaClientId: null,
 	gid: null,
 	participantId: null,
 
@@ -35,7 +36,10 @@ const quizApp = {
 	},
 
 	init: function () {
-		if (window.location.hostname != "www.innovationcompass.io") {
+		if (window.location.hostname == "www.innovationcompass.io") {
+			this.baseUrl = "https://public-policy-lab.github.io/innovation-compass/";
+			this.gaClientId = "G-H3ZP0XQ757";
+		} else {
 			this.baseUrl = "./";
 		}
 
@@ -45,7 +49,7 @@ const quizApp = {
 			toggleApp.init();
 		});
 
-		gtag("get", "G-H3ZP0XQ757", "client_id", (client_id) => {
+		gtag("get", this.gaClientId, "client_id", (client_id) => {
 			this.gid = client_id;
 		});
 	},
