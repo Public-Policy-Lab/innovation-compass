@@ -2,17 +2,15 @@
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-Innovation Compass helps early-stage innovators develop the 12 fundamental capacities they need to make their venture succeed. It is developed in collaboration with undercapitalized innovators deploying science and technology. The work was supported by funding from the National Science Foundation (Award #2331195).
-
-Learning how to navigate the innovation ecosystem is overwhelming and complex. Innovation Compass is your guide to the intricate process of developing the fundamental capacities needed to gain confidence in taking the next step of your innovation journey.
+Learning how to navigate the innovation ecosystem is overwhelming and complex. Innovation Compass is the early-stage innovator’s guide to developing the fundamental capacities needed to gain confidence in taking the next step of the innovation journey.  It was developed in collaboration with undercapitalized STEMM innovators. The work was supported by funding from the National Science Foundation (Award #2331195).
 
 ## Overview
 
-Meet Innovation Compass, designed by and for a broad range of early-stage founders. The platform includes:
+Innovation Compass was designed by and for a broad range of early-stage founders. The platform includes:
 
 - 12 Building Blocks: A framework to help you learn what matters most for your company's success.
 - 40 Practices: A curated set of steps that breaks down the complexity of starting a company.
-- 201 Resources: Hand picked resources to provide you with the best learning opportunities
+- 201 Resources: Hand picked resources to provide you with the best learning opportunities.
 
 ## Features
 
