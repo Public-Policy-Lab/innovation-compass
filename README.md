@@ -28,6 +28,8 @@ Innovation Compass was designed by and for a broad range of early-stage founders
 
 The application is built with vanilla JavaScript, HTML, and CSS—no build process or dependencies required. It can run entirely from static files served by any web server.
 
+Also included in the repo is a zip file including the HTML from the original website (innovationcompass.zip).
+
 
 ## Project Structure
 
