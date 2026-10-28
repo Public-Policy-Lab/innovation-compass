@@ -36,7 +36,7 @@ const quizApp = {
 	},
 
 	init: function () {
-		if (window.location.hostname == "www.innovationcompass.io") {
+		if (window.location.hostname == "www.innovationcompass.io" || window.location.hostname == "innovationcompass.webflow.io") {
 			this.baseUrl = "https://public-policy-lab.github.io/innovation-compass/";
 			this.gaClientId = "G-H3ZP0XQ757";
 		} else {
